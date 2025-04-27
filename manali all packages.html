@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manali – Heaven in the Hills | Discover India's Magic</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#2A9D8F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('photo-1581791534721-e599df4417f7.jpg');
+background-size: cover;
+background-position: center;
+}
+.nav-scrolled {
+background-color: rgba(255, 255, 255, 0.95);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.custom-checkbox {
+position: relative;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e2e8f0;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+border-color: #CBD5E0;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #FF6B35;
+border-color: #FF6B35;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.gallery-item {
+transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+transform: scale(1.03);
+}
+.tab-button {
+transition: all 0.3s ease;
+}
+.tab-button.active {
+background-color: #FF6B35;
+color: white;
+}
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.accordion-content.active {
+max-height: 500px;
+}
+.accordion-icon {
+transition: transform 0.3s ease;
+}
+.accordion-button.active .accordion-icon {
+transform: rotate(180deg);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.custom-range::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.lightbox {
+display: none;
+position: fixed;
+z-index: 999;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.9);
+justify-content: center;
+align-items: center;
+}
+.lightbox.active {
+display: flex;
+}
+.lightbox-content {
+max-width: 90%;
+max-height: 80%;
+}
+.weather-chart {
+width: 100%;
+height: 300px;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+          <a href="All-Travel-Packages.html" class="flex items-center text-gray-800">
+              <i class="ri-arrow-left-line mr-2"></i>
+              <span>Back to Packages</span>
+          </a>
+      </div>
+      <h1 class="text-xl font-semibold text-gray-800">Manali: Heaven in the Hills</h1>
+      <div class="flex items-center">
+          <button class="w-10 h-10 flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-full">
+          </button>
+      </div>
+  </div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section pt-24 pb-16 md:pt-32 md:pb-24">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl text-white">
+<h1 class="text-5xl md:text-6xl font-bold mb-4">Manali</h1>
+<p class="text-xl mb-6">The Crown Jewel of the Himalayas</p>
+<div class="flex items-center mb-8">
+<div class="flex items-center mr-6">
+<i class="ri-map-pin-line mr-2"></i>
+<span>Northern India</span>
+</div>
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1">4.8 (1,562 reviews)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Info Bar -->
+<section id="quickInfoBar" class="bg-white/70 backdrop-blur-md py-7 border-b border-gray-200 sticky top-16 z-40 transition-all duration-300 translate-y-0">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-center pb-2 gap-8 flex-wrap">
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-calendar-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Best Time</p>
+        <p class="text-xs text-gray-600">December to February</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-sun-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Weather</p>
+        <p class="text-xs text-gray-600">Cold and Dreamy</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-time-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Duration</p>
+        <p class="text-xs text-gray-600">5-8 Days</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-wallet-3-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Starting Price</p>
+        <p class="text-xs text-gray-600">$349 per person</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-translate-2-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Languages</p>
+        <p class="text-xs text-gray-600">Hindi, English, Pahari</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script -->
+<script>
+  const quickInfoBar = document.getElementById('quickInfoBar');
+  let lastScrollTop = 0;
+  let scrollTimeout;
+  let isHidden = false;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const diff = scrollTop - lastScrollTop;
+
+    clearTimeout(scrollTimeout);
+
+    // When scrolling down
+    if (diff > 10 && !isHidden) {
+      quickInfoBar.classList.add('translate-y-[-100%]');
+      isHidden = true;
+    }
+
+    // When scrolling up
+    if (diff < -10 && isHidden && scrollTop > 50) {
+      scrollTimeout = setTimeout(() => {
+        quickInfoBar.classList.remove('translate-y-[-100%]');
+        isHidden = false;
+      }, 200);
+    }
+
+    // If we're at the top, keep it visible (reset any glitch)
+    if (scrollTop < 10) {
+      quickInfoBar.classList.remove('translate-y-[-100%]');
+      isHidden = false;
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+<!-- Scroll Script -->
+<script>
+  const quickInfoBar = document.getElementById('quickInfoBar');
+  let lastScrollTop = 0;
+  let isHidden = false;
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const diff = scrollTop - lastScrollTop;
+
+    clearTimeout(scrollTimeout);
+
+    if (diff > 10 && !isHidden) {
+      // Scroll down → hide bar
+      quickInfoBar.style.transform = 'translateY(-100%)';
+      isHidden = true;
+    }
+
+    if (diff < -10 && isHidden) {
+      // Wait 200ms after scroll up stops to show the bar
+      scrollTimeout = setTimeout(() => {
+        quickInfoBar.style.transform = 'translateY(0)';
+        isHidden = false;
+      }, 200);
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+<!-- Main Content Section -->
+<section class="py-12">
+<div class="container mx-auto px-4 flex justify-center">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl w-full">
+<!-- Left Content -->
+<div class="lg:col-span-2">
+<!-- Overview Section -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Overview</h2>
+<div class="prose max-w-none">
+<p class="mb-4">Manali, "The Gateway to the Himalayas" is a stunning hill station in Himachal Pradesh, surrounded by snow-capped peaks, lush valleys, and crystal-clear rivers.</p>
+<p class="mb-4">Adventure seekers can enjoy thrilling activities like skiing, paragliding, and trekking, while nature lovers can explore the serene landscapes and peaceful environment.</p>
+<p>Rich in culture, Manali is home to ancient temples, vibrant markets, and warm hospitality, offering a perfect balance of adventure, relaxation, and spiritual immersion.</p>
+</div>
+</div>
+<!-- Key Attractions Section -->
+<div class="mb-12">
+  <h2 class="text-2xl font-bold mb-6">Key Attractions</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Attraction 1 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="hadimba temple.png" alt="hadimba temple">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2"> Hadimba Temple</h3>
+        <p class="text-gray-600 text-sm mb-3"> Relax in the peaceful surroundings of this ancient temple nestled in cedar forests and embrace spiritual tranquility.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 1-2 hours</span>
+        </div>
+      </div>
+    </div>
+    <!-- Attraction 2 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="solang valley.png" alt="Munnar Tea Gardens">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2"> Solang Valley</h3>
+        <p class="text-gray-600 text-sm mb-3">Soak up the thrill of adventure activities like skiing, paragliding, and zorbing while enjoying breathtaking mountain views.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 2-5 hours</span>
+        </div>
+      </div>
+    </div>
+    <!-- Attraction 3 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="naggar castle.png" alt="Naggar castle">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Naggar Castle</h3>
+        <p class="text-gray-600 text-sm mb-3">Uncover the charm of this ancient castle, offering a perfect blend of history and panoramic views of the surrounding Himalayan peaks and valleys.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 3-5 hours</span>
+        </div>
+      </div>
+    </div>
+    <!-- Attraction 4 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="old manali.png" alt="old manali">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Old Manali</h3>
+        <p class="text-gray-600 text-sm mb-3"> Unwind in the charming village with its cozy cafés, scenic apple orchards, and laid-back Himalayan vibe.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 2-3 hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6">
+    <button class="flex items-center text-primary font-small">
+      <span>And Many More Amazing Destinations</span>
+    </button>
+  </div>
+  </div>
+<!-- Recommended Activities -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Recommended Activities</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Activity 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="paragliding in rohtang pass.png">
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1">Paragliding in Solang Valley</h3>
+<p class="text-gray-600 text-sm">Experience the thrill of soaring through the sky while enjoying breathtaking views of the valley and surrounding mountains.</p>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="skking.png">
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1">Skiing at Rohtang Pass</h3>
+<p class="text-gray-600 text-sm">Embrace the winter magic with skiing, snowboarding, and other snow-based activities in one of the most famous snow destinations in India.</p>
+</div>
+</div>
+<!-- Activity 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="river rafting.png">
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1">River Rafting in Beas River</h3>
+<p class="text-gray-600 text-sm">Get your adrenaline pumping with a thrilling rafting experience on the Beas River, surrounded by stunning mountain views.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Best Time to Visit -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Best Time to Visit</h2>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<p class="text-gray-700 mb-6">The ideal time to visit Manali is from October to June, depending on whether you prefer snow, pleasant weather, or lush greenery.</p>
+<div class="weather-chart" id="weatherChart"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="bg-green-50 rounded-lg p-4">
+<h3 class="font-bold text-lg mb-2 text-green-700">Peak Season (Dec-Feb)</h3>
+<p class="text-sm text-gray-700">Cold and snowy. Perfect for snow lovers and winter sports. Expect heavy tourist crowds and higher prices.</p>
+</div>
+<div class="bg-yellow-50 rounded-lg p-4">
+<h3 class="font-bold text-lg mb-2 text-yellow-700">Shoulder Season (Mar-Jun)</h3>
+<p class="text-sm text-gray-700">Mild, pleasant weather. Great for sightseeing, trekking, and adventure activities. Comparatively fewer crowds than winter.</p>
+</div>
+<div class="bg-red-50 rounded-lg p-4">
+<h3 class="font-bold text-lg mb-2 text-red-700">Off Season (Jul-Sep)</h3>
+<p class="text-sm text-gray-700">Monsoon season. Lush green landscapes and peaceful surroundings, but heavy rains can cause landslides and disrupt travel.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Travel Tips -->
+<div class="mb-12">
+  <h2 class="text-2xl font-bold mb-6">Travel Tips</h2>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="divide-y divide-gray-200">
+      <!-- Tip 1 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-3">
+              <i class="ri-flight-takeoff-line text-white"></i>
+            </div>
+            <span class="font-medium">Getting There</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">The nearest airport to Manali is Kullu-Manali Airport (Bhuntar), about 50 km away, with limited flights from Delhi and Chandigarh. Alternatively, travelers often fly to Chandigarh or Delhi and drive or take a bus to Manali.</p>
+          <p class="text-gray-600">Manali is well-connected by road to major cities like Delhi, Chandigarh, and Shimla. Regular Volvo and private buses operate from Delhi (about 12–14 hours).</p>
+        </div>
+      </div>
+
+      <!-- Tip 2 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-3">
+              <i class="ri-car-line text-white"></i>
+            </div>
+            <span class="font-medium">Local Transportation</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Within Manali, auto-rickshaws are limited, but taxis are readily available. For sightseeing, hiring a private taxi or renting a two-wheeler is common and convenient.</p>
+          <p class="text-gray-600">Shared cabs and buses are affordable options for traveling to nearby spots like Solang Valley, Rohtang Pass, and Naggar.</p>
+        </div>
+      </div>
+
+      <!-- Tip 3 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-3">
+              <i class="ri-suitcase-line text-white"></i>
+            </div>
+            <span class="font-medium">What to Pack</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Pack warm clothes, especially if visiting between October and February — layers, thermals, a heavy jacket, gloves, and woolen caps are essential.</p>
+          <p class="text-gray-600 mb-2">Also pack sunscreen, sunglasses, lip balm, moisturizers, and comfortable walking shoes for treks and sightseeing.</p>
+          <p class="text-gray-600">For summers (March–June), light woolens or a jacket for evenings is enough.</p>
+        </div>
+      </div>
+
+      <!-- Tip 4 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-3">
+              <i class="ri-user-settings-line text-white"></i>
+            </div>
+            <span class="font-medium">Local Customs</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Manali, though a popular tourist spot, retains a traditional Himachali culture. Dress modestly in villages and religious sites. Always remove shoes when entering temples and monasteries.</p>
+          <p class="text-gray-600">It's polite to ask permission before photographing locals, especially in traditional attire or in sacred spaces.</p>
+        </div>
+      </div>
+
+      <!-- Tip 5 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary rounded-full mr-3">
+              <i class="ri-shield-check-line text-white"></i>
+            </div>
+            <span class="font-medium">Safety Tips</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Manali is generally safe for tourists, but remain cautious with your belongings, especially in crowded spots like Mall Road.</p>
+          <p class="text-gray-600 mb-2">Drink bottled water, avoid roadside food stalls if you have a sensitive stomach, and carry basic medicines, particularly for altitude sickness if you’re traveling to higher regions like Rohtang.</p>
+          <p class="text-gray-600">Be careful during winter due to slippery roads and in monsoon because of possible landslides.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to handle the accordion toggle -->
+<script>
+  // Get all accordion buttons
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Get the associated content of the clicked accordion button
+      const content = button.nextElementSibling;
+
+      // Toggle the content visibility
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';  // Show content
+        button.querySelector('.accordion-icon').classList.remove('ri-arrow-down-s-line');
+        button.querySelector('.accordion-icon').classList.add('ri-arrow-up-s-line');
+      } else {
+        content.style.display = 'none';  // Hide content
+        button.querySelector('.accordion-icon').classList.remove('ri-arrow-up-s-line');
+        button.querySelector('.accordion-icon').classList.add('ri-arrow-down-s-line');
+      }
+    });
+  });
+</script>
+
+<!-- Photo Gallery -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Photo Gallery</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="gallery-item cursor-pointer" data-img="Himachali Folk Dance & Music.png &width=800&height=600&seq=13&orientation=landscape">
+  <img src="Himachali Folk Dance & Music.png" alt="Himachal folk dance" class="w-full h-40 object-cover object-top rounded">
+    <p class="text-sm mt-1 text-gray-600">Himachali Folk Dance</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="Vashisht Hot Springs.png  &width=800&height=600&seq=13&orientation=landscape">
+  <img src="Vashisht Hot Springs.png" alt="Vashisht Hot Springs.png" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Vashisht Hot Springs</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="Tibetan Monasteries - Peace and Serenity.png &width=800&height=600&seq=13&orientation=landscape">
+  <img src="Tibetan Monasteries - Peace and Serenity.png" alt="Traditional Kerala Houseboats Interior.png" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Tibetan Monasteries</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="sunrise.png &width=800&height=600&seq=13&orientation=landscape">
+  <img src="sunrise.png" alt="Bekal fort" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Sunrise in Manali</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="bias river.png &width=800&height=600&seq=13&orientation=landscape">
+  <img src="bias river.png" alt="Bekal fort" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Beas River</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="mall road.png  &width=800&height=600&seq=13&orientation=landscape">
+  <img src="mall road.png" alt="Bekal fort" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Mall Road</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar -->
+<div class="lg:col-span-1">
+<!-- Tour Packages -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+<div class="p-6 bg-primary border-b border-gray-200">
+<h3 class="text-white font-bold">Tour Packages</h3>
+</div>
+<div class="divide-y divide-gray-200">
+<!-- Package 1 -->
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Snowy Manali Adventure</h4>
+<div class="flex items-center mb-2 text-sm text-gray-600">
+<i class="ri-time-line mr-1"></i>
+<span>7 Days / 6 Nights</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Experience the magic of Manali’s snowy landscapes. Includes Solang Valley adventure sports, guided trips to Rohtang Pass, and cozy stays in mountain resorts.</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-600 ml-1">(145 reviews)</span>
+</div>
+<div class="text-white font-bold">$459</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+<!-- Package 2 -->
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Manali & Kasol Nature Escape</h4>
+<div class="flex items-center mb-2 text-sm text-gray-600">
+<i class="ri-time-line mr-1"></i>
+<span>5 Days / 4 Nights</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Explore Manali’s scenic valleys and Kasol’s riverside charm. Includes guided treks, village walks, and authentic homestay experiences in the Parvati Valley.</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-line"></i>
+</div>
+<span class="text-sm text-gray-600 ml-1">(102 reviews)</span>
+</div>
+<div class="text-white font-bold">$699</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+<!-- Package 3 -->
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Luxury Himalayan Wellness Retreat</h4>
+<div class="flex items-center mb-2 text-sm text-gray-600">
+<i class="ri-time-line mr-1"></i>
+<span>10 Days / 9 Nights</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Rejuvenate with yoga, meditation, and spa therapies amidst the serene mountains of Manali and Naggar. Includes luxury resort stays, holistic healing sessions, and organic dining.</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-600 ml-1">(68 reviews)</span>
+</div>
+<div class="text-white font-bold">$1,099</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Accommodation Options -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+<div class="p-6 bg-primary border-b border-gray-200">
+<h3 class="text-white font-bold">Accommodation Options</h3>
+</div>
+<div class="p-6">
+<!-- Luxury -->
+<div class="mb-6">
+<h4 class="font-bold text-lg mb-2">Luxury Mountain Resorts</h4>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-gray-600">$250+ per night</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Stay in Manali’s finest luxury resorts offering stunning mountain views, heated pools, spa treatments, gourmet dining, and cozy fireplaces.</p>
+<div class="flex gap-1 mb-2">
+<img src="https://readdy.ai/api/search-image?query=A%2520luxurious%2520heritage%2520hotel%2520in%2520Rajasthan%252C%2520showing%2520a%2520converted%2520palace%2520with%2520ornate%2520architecture%252C%2520intricate%2520stone%2520carvings%252C%2520and%2520elegant%2520archways.%2520The%2520image%2520captures%2520a%2520beautifully%2520decorated%2520courtyard%2520with%2520traditional%2520Rajasthani%2520elements%2520like%2520carved%2520pillars%2520and%2520jharokhas%2520%2528balconies%2529.%2520The%2520hotel%2520features%2520manicured%2520gardens%252C%2520a%2520swimming%2520pool%252C%2520and%2520perhaps%2520a%2520glimpse%2520of%2520luxurious%2520guest%2520rooms%2520with%2520period%2520furniture%2520and%2520royal%2520decor.%2520The%2520image%2520should%2520convey%2520the%2520opulent%252C%2520authentic%2520experience%2520of%2520staying%2520in%2520a%2520former%2520royal%2520residence.&width=120&height=80&seq=15&orientation=landscape" alt="Heritage Hotel" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=An%2520elegant%2520interior%2520of%2520a%2520luxury%2520heritage%2520hotel%2520room%2520in%2520Rajasthan%252C%2520featuring%2520a%2520spacious%2520suite%2520with%2520ornate%2520traditional%2520decor.%2520The%2520room%2520has%2520a%2520four-poster%2520bed%2520with%2520silk%2520drapes%252C%2520antique%2520furniture%252C%2520intricate%2520hand-painted%2520walls%2520or%2520frescoes%252C%2520and%2520marble%2520flooring.%2520Large%2520windows%2520with%2520jharokha-style%2520%2528ornate%2520overhanging%2520balcony%2529%2520elements%2520offer%2520views%2520of%2520palace%2520grounds%2520or%2520city%2520vistas.%2520The%2520decor%2520blends%2520royal%2520Rajasthani%2520aesthetics%2520with%2520modern%2520luxury%2520amenities%252C%2520featuring%2520rich%2520textiles%2520in%2520jewel%2520tones%2520and%2520traditional%2520artwork.&width=120&height=80&seq=16&orientation=landscape" alt="Heritage Hotel Room" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520luxurious%2520dining%2520area%2520in%2520a%2520heritage%2520hotel%2520in%2520Rajasthan%252C%2520featuring%2520an%2520opulent%2520restaurant%2520or%2520banquet%2520hall%2520with%2520traditional%2520royal%2520decor.%2520The%2520space%2520has%2520ornate%2520columns%252C%2520intricate%2520ceiling%2520work%252C%2520crystal%2520chandeliers%252C%2520and%2520elegant%2520table%2520settings%2520with%2520fine%2520china%2520and%2520silverware.%2520The%2520ambiance%2520captures%2520the%2520regal%2520dining%2520experience%2520with%2520perhaps%2520some%2520traditionally%2520dressed%2520staff%2520or%2520musicians%2520performing%2520in%2520the%2520background.%2520The%2520image%2520conveys%2520the%2520luxurious%2520dining%2520experience%2520offered%2520in%2520high-end%2520heritage%2520properties%2520that%2520were%2520once%2520royal%2520palaces.&width=120&height=80&seq=17&orientation=landscape" alt="Heritage Hotel Dining" class="w-20 h-14 object-cover object-top rounded">
+</div>
+<div class="text-sm text-gray-600">
+<span class="font-medium">Popular options:</span> The Himalayan (Manali), Span Resort & Spa (Kullu), Solang Valley Resort
+</div>
+</div>
+<!-- Mid-range -->
+<div class="mb-6">
+<h4 class="font-bold text-lg mb-2">Boutique Hotels & Eco-Resorts</h4>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="ml-2 text-gray-600">$100-250 per night</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Stay in charming boutique hotels and eco-friendly resorts with personalized hospitality, traditional Himachali architecture, and beautiful valley views.</p>
+<div class="flex gap-1 mb-2">
+<img src="https://readdy.ai/api/search-image?query=A%2520charming%2520boutique%2520hotel%2520in%2520Rajasthan%2520with%2520a%2520blend%2520of%2520traditional%2520and%2520contemporary%2520design.%2520The%2520image%2520shows%2520a%2520tastefully%2520renovated%2520haveli%2520%2528traditional%2520mansion%2529%2520with%2520a%2520welcoming%2520entrance%2520featuring%2520colorful%2520Rajasthani%2520elements%2520like%2520jharokhas%2520%2528ornate%2520windows%2529%2520and%2520perhaps%2520some%2520contemporary%2520touches.%2520The%2520property%2520has%2520a%2520cozy%2520courtyard%2520with%2520comfortable%2520seating%2520areas%252C%2520potted%2520plants%252C%2520and%2520traditional%2520decor%2520elements.%2520The%2520atmosphere%2520conveys%2520a%2520mid-range%2520accommodation%2520option%2520that%2520offers%2520authentic%2520character%2520without%2520the%2520ultra-luxury%2520price%2520tag.&width=120&height=80&seq=18&orientation=landscape" alt="Boutique Hotel" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520comfortable%2520room%2520in%2520a%2520boutique%2520hotel%2520in%2520Rajasthan%252C%2520featuring%2520a%2520well-appointed%2520space%2520with%2520a%2520blend%2520of%2520traditional%2520and%2520modern%2520elements.%2520The%2520room%2520has%2520a%2520comfortable%2520bed%2520with%2520quality%2520linens%252C%2520tasteful%2520decor%2520with%2520local%2520Rajasthani%2520touches%2520like%2520colorful%2520textiles%2520or%2520artwork%252C%2520and%2520modern%2520amenities.%2520The%2520space%2520is%2520clean%2520and%2520inviting%2520with%2520perhaps%2520a%2520small%2520seating%2520area%2520or%2520work%2520desk%252C%2520and%2520windows%2520that%2520offer%2520views%2520of%2520the%2520surroundings.%2520The%2520image%2520conveys%2520a%2520mid-range%2520accommodation%2520that%2520offers%2520comfort%2520and%2520character%2520without%2520extreme%2520luxury.&width=120&height=80&seq=19&orientation=landscape" alt="Boutique Hotel Room" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520pleasant%2520dining%2520area%2520in%2520a%2520boutique%2520hotel%2520in%2520Rajasthan%252C%2520featuring%2520a%2520charming%2520restaurant%2520or%2520cafe%2520space%2520with%2520a%2520mix%2520of%2520traditional%2520and%2520contemporary%2520design.%2520The%2520space%2520has%2520comfortable%2520seating%252C%2520tasteful%2520decor%2520with%2520Rajasthani%2520elements%2520like%2520colorful%2520textiles%2520or%2520artwork%252C%2520and%2520a%2520warm%2520ambiance.%2520Tables%2520are%2520nicely%2520set%2520with%2520quality%2520tableware%252C%2520and%2520perhaps%2520some%2520local%2520design%2520touches%2520like%2520traditional%2520lamps%2520or%2520artifacts.%2520The%2520image%2520conveys%2520a%2520pleasant%2520dining%2520experience%2520in%2520a%2520mid-range%2520property%2520that%2520offers%2520character%2520and%2520quality%2520without%2520extreme%2520luxury.&width=120&height=80&seq=20&orientation=landscape" alt="Boutique Hotel Dining" class="w-20 h-14 object-cover object-top rounded">
+</div>
+<div class="text-sm text-gray-600">
+<span class="font-medium">Popular options:</span> Johnson Lodge & Spa (Manali), Larisa Resort (Kullu), Shivadya Resort & Spa (Karjan)
+</div>
+</div>
+<!-- Budget -->
+<div>
+<h4 class="font-bold text-lg mb-2">Guesthouses & Homestays</h4>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="ml-2 text-gray-600">$30-100 per night</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Stay with welcoming local families or cozy guesthouses offering authentic Himachali food, warm hospitality, and a real cultural experience.</p>
+<div class="flex gap-1 mb-2">
+<img src="https://readdy.ai/api/search-image?query=A%2520welcoming%2520guesthouse%2520or%2520homestay%2520in%2520Rajasthan%252C%2520showing%2520a%2520modest%2520but%2520charming%2520traditional%2520building%2520with%2520local%2520architectural%2520elements.%2520The%2520property%2520has%2520a%2520simple%2520but%2520inviting%2520entrance%2520with%2520perhaps%2520some%2520potted%2520plants%2520or%2520traditional%2520decorations.%2520The%2520atmosphere%2520conveys%2520a%2520family-run%2520establishment%2520that%2520offers%2520an%2520authentic%2520local%2520experience%2520at%2520an%2520affordable%2520price.%2520The%2520building%2520might%2520have%2520a%2520small%2520courtyard%2520or%2520terrace%2520where%2520guests%2520can%2520relax%252C%2520with%2520simple%2520but%2520comfortable%2520furnishings.&width=120&height=80&seq=21&orientation=landscape" alt="Guesthouse" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520simple%2520but%2520clean%2520room%2520in%2520a%2520guesthouse%2520or%2520homestay%2520in%2520Rajasthan%252C%2520featuring%2520a%2520modest%2520but%2520comfortable%2520space%2520with%2520basic%2520amenities.%2520The%2520room%2520has%2520a%2520neatly%2520made%2520bed%2520with%2520clean%2520linens%252C%2520simple%2520furniture%2520like%2520a%2520small%2520table%2520or%2520chair%252C%2520and%2520perhaps%2520some%2520local%2520touches%2520in%2520the%2520decor%2520like%2520a%2520small%2520piece%2520of%2520artwork%2520or%2520textile.%2520The%2520space%2520is%2520modest%2520but%2520well-kept%252C%2520with%2520natural%2520light%2520coming%2520through%2520a%2520window.%2520The%2520image%2520conveys%2520a%2520budget-friendly%2520accommodation%2520that%2520offers%2520cleanliness%2520and%2520basic%2520comfort.&width=120&height=80&seq=22&orientation=landscape" alt="Guesthouse Room" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520simple%2520dining%2520area%2520in%2520a%2520guesthouse%2520or%2520homestay%2520in%2520Rajasthan%252C%2520featuring%2520a%2520modest%2520but%2520clean%2520space%2520where%2520guests%2520can%2520enjoy%2520meals.%2520The%2520area%2520has%2520basic%2520tables%2520and%2520chairs%252C%2520perhaps%2520in%2520a%2520small%2520dining%2520room%2520or%2520courtyard%2520setting.%2520There%2520might%2520be%2520simple%2520decorative%2520elements%2520like%2520local%2520textiles%2520or%2520artwork%2520on%2520the%2520walls.%2520The%2520atmosphere%2520conveys%2520a%2520homey%252C%2520authentic%2520experience%2520where%2520travelers%2520can%2520enjoy%2520home-cooked%2520local%2520meals.%2520The%2520setting%2520is%2520unpretentious%2520but%2520welcoming%252C%2520reflecting%2520the%2520budget-friendly%2520nature%2520of%2520the%2520accommodation.&width=120&height=80&seq=23&orientation=landscape" alt="Guesthouse Dining" class="w-20 h-14 object-cover object-top rounded">
+</div>
+<div class="text-sm text-gray-600">
+<span class="font-medium">Popular options:</span> Orchards House (Manali), Apple Country Homestay, The Lost Tribe Hostel (Old Manali)
+</div>
+</div>
+</div>
+</div>
+<!-- Inquiry Form -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden sticky top-32">
+<div class="p-6 bg-primary/90 border-b border-gray-200">
+<h3 class="text-white font-bold">Plan Your Trip</h3>
+</div>
+<div class="p-6">
+<form>
+<div class="mb-4">
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="mb-4">
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="mb-4">
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="mb-4">
+<label for="dates" class="block text-sm font-medium text-gray-700 mb-1">Travel Dates</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative">
+<input type="date" placeholder="Check-in" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="relative">
+<input type="date" placeholder="Check-out" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label for="travelers" class="block text-sm font-medium text-gray-700 mb-1">Number of Travelers</label>
+<div class="relative">
+<select id="travelers" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary appearance-none pr-8">
+<option>Select</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label for="accommodation" class="block text-sm font-medium text-gray-700 mb-1">Preferred Accommodation</label>
+<div class="relative">
+<select id="accommodation" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary appearance-none pr-8">
+<option>Select</option>
+<option>Luxury Heritage Hotels</option>
+<option>Boutique Hotels</option>
+<option>Guesthouses & Homestays</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Special Requirements</label>
+<textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary"></textarea>
+</div>
+<div class="mb-6">
+<label class="custom-checkbox flex items-center">
+<input type="checkbox" class="hidden">
+<span class="checkmark"></span>
+<span class="ml-7 text-gray-700 text-sm">I agree to receive travel updates and promotional offers.</span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Send Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Destinations -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-2xl font-bold mb-8">Related Destinations</h2>
+<div class="flex overflow-x-auto pb-6 gap-6 snap-x">
+<!-- Destination 1 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+  <img src="parvati valley.png" alt="Jodhpur" class="w-full h-full object-cover object-top">
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Parvati Valley</h3>
+<p class="text-sm">The Tranquil Escape</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">Discover the serene beauty of Parvati Valley, known for its lush forests, crystal-clear rivers, and peaceful villages. A haven for trekkers, backpackers, and nature lovers, offering adventure and tranquility.</p>
+<div class="flex items-center justify-between">
+  <div class="flex items-center">
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-half-fill text-yellow-400 mr-1"></i>
+    <span class="text-sm text-gray-600">4.8</span>
+    
+  </div>
+</div>
+</div>
+</div>
+<!-- Destination 2 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+  <img src="kasol.png" alt="Jodhpur" class="w-full h-full object-cover object-top">
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Kasol</h3>
+<p class="text-sm">The Himachali Hippie Haven</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">A small, picturesque village by the Parvati River, Kasol is renowned for its laid-back vibe, vibrant cafes, and beautiful trekking trails, offering a unique blend of relaxation and adventure.</p>
+<div class="flex items-center justify-between">
+  <div class="flex items-center">
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-half-fill text-yellow-400 mr-1"></i>
+    <span class="text-sm text-gray-600">4.7</span>
+    
+  </div>
+</div>
+</div>
+</div>
+<!-- Destination 3 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+<img src="chandrakhani.png" alt="allepey" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Chandrakhani Pass</h3>
+<p class="text-sm">The Trekker’s Dream</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">For trekking enthusiasts, Chandrakhani Pass offers stunning views of surrounding mountains, dense forests, and alpine meadows, making it a challenging yet rewarding adventure.</p>
+<div class="flex items-center justify-between">
+  <div class="flex items-center">
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-fill text-yellow-400 mr-1"></i>
+    <i class="ri-star-half-fill text-yellow-400 mr-1"></i>
+    <span class="text-sm text-gray-600">4.9</span>
+    
+  </div>
+</div>
+</div>
+</div>
+<!-- Destination 4 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+  <img src="rahala falls.png" alt="Jodhpur" class="w-full h-full object-cover object-top">
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Rahala Falls</h3>
+<p class="text-sm">Nature’s Beauty Unfolded</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">A peaceful retreat surrounded by forests, Rahala Falls offers a refreshing break with its cool mountain water cascading down from great heights, perfect for nature walks and relaxation.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+  <i class="ri-star-fill text-yellow-400 mr-1"></i>
+  <i class="ri-star-fill text-yellow-400 mr-1"></i>
+  <i class="ri-star-fill text-yellow-400 mr-1"></i>
+  <i class="ri-star-fill text-yellow-400 mr-1"></i>
+  <i class="ri-star-half-fill text-yellow-400 mr-1"></i>
+  <span class="text-sm text-gray-600">4.6</span>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lightbox -->
+<div class="lightbox">
+<div class="lightbox-content">
+<img src="" alt="Gallery Image" class="max-w-full max-h-full">
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70">
+<i class="ri-close-line ri-xl"></i>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">logo</a>
+<p class="text-gray-400 mb-6">Discover the magic of India with our expertly curated travel experiences. From majestic mountains to serene beaches, we bring you the best of India.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Popular Destinations</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kashmir</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Goa</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kerala</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Rajasthan</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Manali</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ladakh</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/b7a2eafa-93ac-44a4-ba2e-12e6740a844e/49cf23b2-94ab-4529-8800-52b367767c71" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Information</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span class="text-gray-400">123 Travel Plaza, MG Road<br>Bangalore, Karnataka 560001<br>India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 98765 43210</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">info@indiamagictravel.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 India Magic Travel. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-400 text-sm">We Accept:</span>
+<div class="flex space-x-2">
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-amazon-pay-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Accordion functionality
+const accordionButtons = document.querySelectorAll('.accordion-button');
+accordionButtons.forEach(button => {
+button.addEventListener('click', function() {
+const content = this.nextElementSibling;
+this.classList.toggle('active');
+if (content.classList.contains('active')) {
+content.classList.remove('active');
+} else {
+content.classList.add('active');
+}
+});
+});
+// Gallery lightbox
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('button');
+galleryItems.forEach(item => {
+item.addEventListener('click', function() {
+const imgSrc = this.getAttribute('data-img');
+lightboxImg.src = imgSrc;
+lightbox.classList.add('active');
+});
+});
+closeBtn.addEventListener('click', function() {
+lightbox.classList.remove('active');
+});
+lightbox.addEventListener('click', function(e) {
+if (e.target === lightbox) {
+lightbox.classList.remove('active');
+}
+});
+// Weather chart
+const weatherChart = echarts.init(document.getElementById('weatherChart'));
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Temperature (°C)', 'Rainfall (mm)'],
+textStyle: {
+color: '#1f2937'
+}
+},
+xAxis: {
+type: 'category',
+data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: [
+{
+type: 'value',
+name: 'Temperature',
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+formatter: '{value} °C',
+color: '#1f2937'
+}
+},
+{
+type: 'value',
+name: 'Rainfall',
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+formatter: '{value} mm',
+color: '#1f2937'
+}
+}
+],
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+series: [
+{
+name: 'Temperature (°C)',
+type: 'line',
+smooth: true,
+data: [18, 21, 27, 33, 36, 35, 31, 29, 30, 27, 23, 19],
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+}
+},
+{
+name: 'Rainfall (mm)',
+type: 'bar',
+yAxisIndex: 1,
+data: [5, 3, 2, 1, 5, 30, 70, 80, 40, 10, 3, 2],
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)',
+borderRadius: 4
+}
+}
+]
+};
+weatherChart.setOption(option);
+// Handle window resize for chart
+window.addEventListener('resize', function() {
+weatherChart.resize();
+});
+});
+</script>
+</body>
+</html>

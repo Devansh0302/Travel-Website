@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discover India's Magic | Premium Travel Experiences</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#2A9D8F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://etimg.etb2bimg.com/thumb/msid-113129852,imgsize-266464,width-1200,height=765,overlay-ettravel/destination/states/need-to-create-new-travel-destinations-in-india-with-focus-on-nature-and-adventure-bajaj.jpg');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.nav-scrolled {
+background-color: rgba(255, 255, 255, 0.95);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.card-animate {
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.card-animate.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.destination-card {
+transition: transform 0.3s ease;
+}
+.destination-card:hover {
+transform: translateY(-10px);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
+.custom-checkbox {
+position: relative;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e2e8f0;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+border-color: #CBD5E0;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #FF6B35;
+border-color: #FF6B35;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.custom-range::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.switch-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e2e8f0;
+transition: .4s;
+border-radius: 34px;
+}
+.switch-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .switch-slider {
+background-color: #FF6B35;
+}
+input:checked + .switch-slider:before {
+transform: translateX(26px);
+}
+.tab-button {
+transition: all 0.3s ease;
+}
+.tab-button.active {
+background-color: #FF6B35;
+color: white;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent" style="transition: transform 0.3s ease-in-out">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-3xl font-['Pacifico'] text-white">logo</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a href="#destinations" class="text-white hover:text-primary font-medium transition-colors">Destinations</a>
+<a href="#testimonials" class="text-white hover:text-primary font-medium transition-colors">Testimonials</a>
+<a href="#contact" class="text-white hover:text-primary font-medium transition-colors">Contact</a>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-menu-line ri-2x"></i>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section h-screen flex items-center bg-cover bg-center relative" style="background-image: url('https://etimg.etb2bimg.com/thumb/msid-113129852,imgsize-266464,width-1200,height=765,overlay-ettravel/destination/states/need-to-create-new-travel-destinations-in-india-with-focus-on-nature-and-adventure-bajaj.jpg');">
+    <!-- Optional dark overlay for readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-2xl text-white">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">Discover India's Magic</h1>
+        <p class="text-xl mb-8">Experience the beauty, culture, and adventure across India's most breathtaking destinations.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="India-Travel-Planning-Wizard.html" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap inline-block">
+            Start Your Journey
+          </a>
+          <a href="All-Travel-Packages.html" class="bg-white text-gray-800 px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap inline-block">
+            View Packages
+          </a>
+        </div>
+      </div>
+    </div>
+</a>
+</div>
+</section>
+  </section>
+  
+  
+
+<!-- Featured Packages Section -->
+<section id="packages" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Featured Packages</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Explore our handpicked selection of premium travel experiences across India's most beautiful destinations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Package 1 -->
+<div class="card-animate bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="https://readdy.ai/api/search-image?query=A%20stunning%20beachside%20scene%20in%20Goa%2C%20India%2C%20with%20pristine%20white%20sand%20beaches%2C%20swaying%20palm%20trees%2C%20and%20crystal%20clear%20turquoise%20waters.%20The%20sun%20is%20setting%2C%20casting%20a%20golden%20glow%20across%20the%20landscape.%20A%20few%20traditional%20wooden%20fishing%20boats%20are%20visible%20in%20the%20distance.%20The%20scene%20captures%20the%20relaxed%2C%20tropical%20atmosphere%20that%20Goa%20is%20famous%20for.&width=600&height=400&seq=2&orientation=landscape" alt="Goa Beach Retreat" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Goa Beach Retreat</h3>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400"></i>
+<span class="ml-1 text-gray-700">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Goa, India</span>
+</div>
+<p class="text-gray-600 mb-4">Experience the perfect beach holiday with pristine shores, water sports, and vibrant nightlife.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$499</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>5 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="card-animate bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="https://readdy.ai/api/search-image?query=A%20breathtaking%20winter%20landscape%20in%20Manali%2C%20India%2C%20with%20snow-capped%20mountains%20in%20the%20background.%20Pine%20trees%20covered%20in%20fresh%20snow%20line%20the%20foreground.%20A%20small%20traditional%20wooden%20cottage%20with%20smoke%20coming%20from%20the%20chimney%20sits%20nestled%20among%20the%20trees.%20The%20scene%20captures%20the%20serene%2C%20magical%20winter%20atmosphere%20of%20this%20Himalayan%20destination.&width=600&height=400&seq=3&orientation=landscape" alt="Manali Winter Escape" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">20% Off</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Manali Winter Escape</h3>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400"></i>
+<span class="ml-1 text-gray-700">4.7</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Manali, Himachal Pradesh</span>
+</div>
+<p class="text-gray-600 mb-4">Discover snow-capped mountains, adventure sports, and cozy evenings by the fireplace.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$649</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>7 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="card-animate bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="https://readdy.ai/api/search-image?query=A%20serene%20scene%20of%20Dal%20Lake%20in%20Kashmir%2C%20India%2C%20with%20traditional%20wooden%20houseboats%20floating%20on%20the%20calm%20waters.%20The%20majestic%20Himalayan%20mountains%20rise%20in%20the%20background%2C%20partially%20covered%20in%20snow.%20The%20early%20morning%20mist%20creates%20a%20dreamy%20atmosphere%2C%20with%20the%20first%20rays%20of%20sunlight%20illuminating%20the%20peaks.%20A%20small%20shikara%20boat%20with%20a%20colorful%20canopy%20glides%20across%20the%20lake.&width=600&height=400&seq=4&orientation=landscape" alt="Kashmir Houseboat Experience" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Kashmir Houseboat Experience</h3>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400"></i>
+<span class="ml-1 text-gray-700">4.9</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Srinagar, Kashmir</span>
+</div>
+<p class="text-gray-600 mb-4">Stay in traditional houseboats on Dal Lake and explore the breathtaking landscapes of Kashmir.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$799</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>8 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Package 4 -->
+<div class="card-animate bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="https://readdy.ai/api/search-image?query=A%20tranquil%20backwater%20scene%20in%20Kerala%2C%20India%2C%20with%20traditional%20houseboats%20cruising%20along%20peaceful%20palm-fringed%20canals.%20Lush%20green%20rice%20paddies%20stretch%20out%20on%20either%20side%20of%20the%20water.%20The%20vibrant%20tropical%20vegetation%20creates%20a%20verdant%20backdrop.%20The%20scene%20captures%20the%20serene%2C%20idyllic%20atmosphere%20of%20Keralas%20famous%20backwaters%20at%20golden%20hour%2C%20with%20warm%20sunlight%20filtering%20through%20the%20coconut%20palms.&width=600&height=400&seq=5&orientation=landscape" alt="Kerala Backwaters Cruise" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Kerala Backwaters Cruise</h3>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400"></i>
+<span class="ml-1 text-gray-700">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Alleppey, Kerala</span>
+</div>
+<p class="text-gray-600 mb-4">Cruise through serene backwaters on a traditional houseboat and experience Kerala's natural beauty.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$599</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>6 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Package 5 -->
+<div class="card-animate bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="https://readdy.ai/api/search-image?query=A%20majestic%20scene%20of%20a%20historic%20fort%20in%20Rajasthan%2C%20India%2C%20with%20intricate%20sandstone%20architecture%20and%20ornate%20details.%20The%20golden%20fort%20stands%20proudly%20against%20a%20clear%20blue%20sky.%20In%20the%20foreground%2C%20theres%20a%20small%20desert%20landscape%20with%20some%20traditional%20Rajasthani%20elements%20like%20colorful%20textiles.%20The%20scene%20captures%20the%20royal%2C%20historic%20atmosphere%20that%20Rajasthan%20is%20famous%20for%2C%20with%20warm%20golden%20light%20accentuating%20the%20architectural%20details.&width=600&height=400&seq=6&orientation=landscape" alt="Rajasthan Royal Heritage Tour" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Premium</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Rajasthan Royal Heritage Tour</h3>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400"></i>
+<span class="ml-1 text-gray-700">4.9</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Jaipur, Udaipur, Jodhpur</span>
+</div>
+<p class="text-gray-600 mb-4">Explore magnificent palaces, ancient forts, and experience the royal heritage of Rajasthan.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$899</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>10 Days</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Package 6 -->
+<div class="card-animate bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="rishikesh.jpg" alt="Ladakh Adventure Expedition" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">Adventure</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Rishikesh Adventure Expedition</h3>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400"></i>
+<span class="ml-1 text-gray-700">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Rishikesh, Rajaji National Park, Ganga River</span>
+</div>
+<p class="text-gray-600 mb-4">Embark on an exhilarating journey through spiritual vibes, river rafting, lush forests, and serene landscapes.</p>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$299</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>5 Days</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- View All Packages Button Section -->
+<div class="text-center mt-12 mb-12"> <!-- Added margin-bottom to create space below the button -->
+    <a href="All-Travel-Packages.html" class="bg-white border border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+      View All Packages
+    </a>
+  </div>
+  
+
+<!-- Top Destinations Section -->
+<section id="destinations" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Top Destinations</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Explore India's most breathtaking locations, each offering unique experiences and unforgettable memories.</p>
+</div>
+<div class="flex overflow-x-auto pb-8 gap-6 snap-x">
+<!-- Destination 1 -->
+<div class="destination-card min-w-[300px] max-w-[300px] rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-64">
+<img src="kashmirrr.png" alt="Kashmir" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-1">Kashmir</h3>
+<p class="text-sm">Heaven on Earth</p>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-calendar-line text-gray-500 mr-1"></i>
+<span class="text-sm text-gray-600">Best time: Mar-Oct</span>
+</div>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.5</span>
+</div>
+</div>
+<a href="Kashmir_corrected.html" data-readdy="true">
+<button class="w-full bg-white border border-primary text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap mt-2">Explore</button>
+</a>
+</div>
+</div>
+<!-- Destination 2 -->
+<div class="destination-card min-w-[300px] max-w-[300px] rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-64">
+<img src="goa.jpg" alt="Goa" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-1">Goa</h3>
+<p class="text-sm">Beach Paradise</p>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-calendar-line text-gray-500 mr-1"></i>
+<span class="text-sm text-gray-600">Best time: Nov-Feb</span>
+</div>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.7</span>
+</div>
+</div>
+<a href="Goa correct.html" data-readdy="true">
+<button class="w-full bg-white border border-primary text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap mt-2">Explore</button>
+</a>
+</div>
+</div>
+<!-- Destination 3 -->
+<div class="destination-card min-w-[300px] max-w-[300px] rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-64">
+<img src="https://readdy.ai/api/search-image?query=A%20picturesque%20scene%20of%20Kerala%20backwaters%20in%20India%2C%20with%20a%20traditional%20houseboat%20cruising%20through%20tranquil%20waters%20lined%20with%20coconut%20palms%20and%20lush%20vegetation.%20The%20scene%20captures%20the%20serene%20atmosphere%20with%20reflections%20in%20the%20still%20water.%20A%20small%20village%20can%20be%20seen%20in%20the%20distance%2C%20with%20traditional%20Kerala-style%20houses%20with%20sloped%20roofs.%20The%20golden%20light%20of%20late%20afternoon%20creates%20a%20peaceful%2C%20idyllic%20mood.&width=300&height=400&seq=10&orientation=portrait" alt="Kerala" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-1">Kerala</h3>
+<p class="text-sm">God's Own Country</p>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-calendar-line text-gray-500 mr-1"></i>
+<span class="text-sm text-gray-600">Best time: Sep-Mar</span>
+</div>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.8</span>
+</div>
+</div>
+<a href="kerela.html" data-readdy="true">
+<button class="w-full bg-white border border-primary text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap mt-2">Explore</button>
+</a>
+</div>
+</div>
+<!-- Destination 4 -->
+<div class="destination-card min-w-[300px] max-w-[300px] rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-64">
+<img src="https://readdy.ai/api/search-image?query=A%20majestic%20view%20of%20Rajasthan%2C%20India%2C%20featuring%20an%20ancient%20fort%20or%20palace%20with%20intricate%20architecture%20perched%20on%20a%20hill.%20The%20golden%20sandstone%20structure%20stands%20against%20a%20clear%20blue%20sky.%20In%20the%20foreground%2C%20theres%20a%20glimpse%20of%20the%20desert%20landscape%20with%20perhaps%20a%20camel%20or%20traditional%20Rajasthani%20elements.%20The%20scene%20captures%20the%20royal%20heritage%20and%20desert%20beauty%20that%20defines%20this%20colorful%20state.&width=300&height=400&seq=11&orientation=portrait" alt="Rajasthan" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-1">Rajasthan</h3>
+<p class="text-sm">Land of Kings</p>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-calendar-line text-gray-500 mr-1"></i>
+<span class="text-sm text-gray-600">Best time: Oct-Mar</span>
+</div>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.8</span>
+</div>
+</div>
+<a href="Rajasthan.html" data-readdy="true">
+<button class="w-full bg-white border border-primary text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap mt-2">Explore</button>
+</a>
+</div>
+</div>
+<!-- Destination 5 -->
+<div class="destination-card min-w-[300px] max-w-[300px] rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-64">
+<img src="manali.jpg" alt="Manali.jpg" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-1">Manali</h3>
+<p class="text-sm">Himalayan Gem</p>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-calendar-line text-gray-500 mr-1"></i>
+<span class="text-sm text-gray-600">Best time:Dec-Feb</span>
+</div>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.8</span>
+</div>
+</div>
+<a href="manali.html" data-readdy="true">
+<button class="w-full bg-white border border-primary text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap mt-2">Explore</button>
+</a>
+</div>
+</div>
+<!-- Destination 6 -->
+<div class="destination-card min-w-[300px] max-w-[300px] rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-64">
+<img src="rishikeshh.jpg" alt="Ladakh" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 text-white">
+<h3 class="text-xl font-bold mb-1">Rishikesh</h3>
+<p class="text-sm">Land of High Passes</p>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<i class="ri-calendar-line text-gray-500 mr-1"></i>
+<span class="text-sm text-gray-600">Best time: Jun-Sep</span>
+</div>
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.8</span>
+</div>
+</div>
+<a href="rishikesh.html" data-readdy="true">
+<button class="w-full bg-white border border-primary text-primary py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap mt-2">Explore</button>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Map Section -->
+<section class="py-16 bg-gray-50 hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Explore India</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Discover the diverse regions of India and find your perfect destination.</p>
+    </div>
+    <div class="bg-white rounded-lg shadow-md p-6 relative">
+      <div class="h-[500px] relative overflow-hidden rounded">
+        <div class="absolute inset-0 bg-center bg-cover" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"></div>
+      </div>
+      <!-- West India Hotspot -->
+      <div class="absolute top-[45%] left-[30%] group">
+        <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center cursor-pointer animate-pulse">
+          <i class="ri-map-pin-fill text-white"></i>
+        </div>
+        <div class="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white p-4 rounded-lg shadow-lg z-10">
+          <h4 class="font-bold text-lg mb-2">West India</h4>
+          <p class="text-gray-600 text-sm mb-3">Discover royal palaces, desert landscapes, and vibrant beaches.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Rajasthan</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Gujarat</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Goa</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Mumbai</span>
+          </div>
+        </div>
+      </div>
+      <!-- South India Hotspot -->
+      <div class="absolute top-[70%] left-[45%] group">
+        <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center cursor-pointer animate-pulse">
+          <i class="ri-map-pin-fill text-white"></i>
+        </div>
+        <div class="hidden group-hover:block absolute top-auto bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-white p-4 rounded-lg shadow-lg z-10">
+          <h4 class="font-bold text-lg mb-2">South India</h4>
+          <p class="text-gray-600 text-sm mb-3">Experience lush backwaters, ancient temples, and coastal beauty.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Kerala</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Tamil Nadu</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Karnataka</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Andhra Pradesh</span>
+          </div>
+        </div>
+      </div>
+      <!-- East India Hotspot -->
+      <div class="absolute top-[40%] left-[65%] group">
+        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center cursor-pointer animate-pulse">
+          <i class="ri-map-pin-fill text-white"></i>
+        </div>
+        <div class="hidden group-hover:block absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white p-4 rounded-lg shadow-lg z-10">
+          <h4 class="font-bold text-lg mb-2">East India</h4>
+          <p class="text-gray-600 text-sm mb-3">Explore tea plantations, Himalayan foothills, and cultural heritage.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">West Bengal</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Sikkim</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Assam</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Odisha</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6 flex justify-center gap-4">
+      <div class="px-1 py-1 bg-gray-100 rounded-full flex">
+        <button class="tab-button active px-4 py-2 rounded-full whitespace-nowrap" data-tab="all">All Regions</button>
+        <button class="tab-button px-4 py-2 rounded-full whitespace-nowrap" data-tab="north">North</button>
+        <button class="tab-button px-4 py-2 rounded-full whitespace-nowrap" data-tab="south">South</button>
+        <button class="tab-button px-4 py-2 rounded-full whitespace-nowrap" data-tab="east">East</button>
+        <button class="tab-button px-4 py-2 rounded-full whitespace-nowrap" data-tab="west">West</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-0 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">What Our Travelers Say</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Hear from our satisfied customers who have experienced the magic of India with us.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20smiling%20Indian%20woman%20in%20her%2030s%20with%20long%20dark%20hair%2C%20wearing%20business%20casual%20attire.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20good%20lighting%20that%20highlights%20her%20friendly%2C%20approachable%20expression.%20The%20image%20is%20framed%20as%20a%20professional%20profile%20picture%20with%20good%20composition.&width=100&height=100&seq=14&orientation=squarish" alt="Priya Sharma" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Priya Sharma</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"Our Kerala backwaters cruise was absolutely magical! The houseboat was comfortable and the staff was exceptional. Watching the sunset over the peaceful waters while enjoying fresh seafood was an experience we'll never forget."</p>
+<div class="text-gray-500 text-sm">
+<span>Kerala Backwaters Cruise</span> • <span>April 2025</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20smiling%20British%20man%20in%20his%2040s%20with%20short%20brown%20hair%20and%20light%20stubble%2C%20wearing%20a%20casual%20button-up%20shirt.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20good%20lighting%20that%20highlights%20his%20friendly%2C%20approachable%20expression.%20The%20image%20is%20framed%20as%20a%20professional%20profile%20picture%20with%20good%20composition.&width=100&height=100&seq=15&orientation=squarish" alt="James Wilson" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">James Wilson</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"The Rajasthan Royal Heritage Tour exceeded all our expectations. The palaces and forts were breathtaking, and our guide was incredibly knowledgeable. Staying in a heritage hotel made us feel like royalty. Highly recommend!"</p>
+<div class="text-gray-500 text-sm">
+<span>Rajasthan Royal Heritage Tour</span> • <span>March 2025</span>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20portrait%20of%20a%20smiling%20Asian%20woman%20in%20her%20late%2020s%20with%20medium-length%20black%20hair%2C%20wearing%20casual%20smart%20attire.%20The%20photo%20has%20a%20clean%2C%20neutral%20background%20and%20good%20lighting%20that%20highlights%20her%20friendly%2C%20approachable%20expression.%20The%20image%20is%20framed%20as%20a%20professional%20profile%20picture%20with%20good%20composition.&width=100&height=100&seq=16&orientation=squarish" alt="Sarah Chen" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Sarah Chen</h4>
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"Our Kashmir trip was the highlight of our year! The houseboat stay on Dal Lake was so peaceful and the views of the mountains were stunning. The local cuisine was delicious and the people were incredibly warm and welcoming."</p>
+<div class="text-gray-500 text-sm">
+<span>Kashmir Houseboat Experience</span> • <span>February 2025</span>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-white border border-primary text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">More reviews coming soon!</button>
+</div>
+</div>
+</section>
+<!-- Why Choose Us Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Why Choose Us</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">We're dedicated to creating unforgettable travel experiences with attention to every detail.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Feature 1 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-award-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Expert Local Guides</h3>
+<p class="text-gray-600">Our knowledgeable guides provide authentic insights and ensure a seamless travel experience.</p>
+</div>
+<!-- Feature 2 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-shield-check-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Safe & Secure</h3>
+<p class="text-gray-600">Your safety is our priority with 24/7 support and comprehensive travel insurance options.</p>
+</div>
+<!-- Feature 3 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-hand-heart-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Personalized Service</h3>
+<p class="text-gray-600">Tailor-made itineraries designed around your preferences, interests, and travel style.</p>
+</div>
+<!-- Feature 4 -->
+<div class="card-animate bg-white rounded-lg shadow-md p-6 text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-wallet-3-line text-primary ri-xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Best Value</h3>
+<p class="text-gray-600">Competitive pricing with no hidden fees and early booking discounts for the best experience.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="bg-primary/5 rounded-lg p-8 md:p-12">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-4">Get Travel Inspiration</h2>
+<p class="text-gray-600 mb-8">Subscribe to our newsletter for exclusive deals, travel tips, and destination guides.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary">
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+</div>
+<p class="text-gray-500 text-sm mt-4">By subscribing, you agree to our Privacy Policy and consent to receive travel-related emails.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to plan your next adventure? Get in touch with our travel experts.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="card-animate">
+<form class="bg-white rounded-lg shadow-md p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div>
+<label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Preferred Destination</label>
+<div class="relative">
+<select id="destination" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary appearance-none pr-8">
+<option>Select Destination</option>
+<option>Kashmir</option>
+<option>Goa</option>
+<option>Kerala</option>
+<option>Rajasthan</option>
+<option>Manali</option>
+<option>Rishikesh</option>
+<option>Other</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="dates" class="block text-sm font-medium text-gray-700 mb-1">Travel Dates</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<i class="ri-calendar-line text-gray-400"></i>
+</div>
+<input type="date" placeholder="Check-in" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<i class="ri-calendar-line text-gray-400"></i>
+</div>
+<input type="date" placeholder="Check-out" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary"></textarea>
+</div>
+<div class="mb-6">
+<label class="custom-checkbox flex items-center">
+<input type="checkbox" class="hidden">
+<span class="checkmark"></span>
+<span class="ml-7 text-gray-700 text-sm">I agree to receive travel updates and promotional offers.</span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<div class="card-animate">
+<div class="bg-white rounded-lg shadow-md p-8 h-full flex flex-col">
+<h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+<div class="space-y-6 flex-grow">
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Our Office</h4>
+<p class="text-gray-600">123 Travel Plaza, MG Road<br>Bangalore, Karnataka 560001<br>India</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Phone</h4>
+<p class="text-gray-600">+91 98765 43210<br>+91 80 2345 6789</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Email</h4>
+<p class="text-gray-600">info@indiamagictravel.com<br>bookings@indiamagictravel.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-bold mb-1">Working Hours</h4>
+<p class="text-gray-600">Monday to Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-bold mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">logo</a>
+<p class="text-gray-400 mb-6">Discover the magic of India with our expertly curated travel experiences. From majestic mountains to serene beaches, we bring you the best of India.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<div>
+  <h4 class="text-lg font-bold mb-6">Popular Destinations</h4>
+  <ul class="space-y-3">
+    <li><a href="kashmir_corrected.html" class="text-gray-400 hover:text-white transition-colors">Kashmir</a></li>
+    <li><a href="Goa correct.html" class="text-gray-400 hover:text-white transition-colors">Goa</a></li>
+    <li><a href="kerela - Copy.html" class="text-gray-400 hover:text-white transition-colors">Kerala</a></li>
+    <li><a href="Rajasthan.html" class="text-gray-400 hover:text-white transition-colors">Rajasthan</a></li>
+    <li><a href="manali.html" class="text-gray-400 hover:text-white transition-colors">Manali</a></li>
+    <li><a href="rishikesh.html" class="text-gray-400 hover:text-white transition-colors">Rishikesh</a></li>
+  </ul>
+</div>  
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Information</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span class="text-gray-400">123 Travel Plaza, MG Road<br>Bangalore, Karnataka 560001<br>India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 98765 43210</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">info@indiamagictravel.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 India Magic Travel. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-400 text-sm">We Accept:</span>
+<div class="flex space-x-2">
+  <i class="ri-visa-fill text-gray-400"></i>
+  <i class="ri-mastercard-fill text-gray-400"></i>
+  <i class="ri-paypal-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// Hide/show navbar based on scroll direction
+if (scrollTop > lastScrollTop) {
+// Scrolling down
+navbar.style.transform = 'translateY(-100%)';
+} else {
+// Scrolling up
+navbar.style.transform = 'translateY(0)';
+}
+lastScrollTop = scrollTop;
+// Change navbar style based on scroll position
+if (scrollTop > 50) {
+navbar.classList.add('nav-scrolled');
+navbar.querySelectorAll('a').forEach(link => {
+link.classList.remove('text-white');
+link.classList.add('text-gray-800');
+});
+navbar.querySelector('.font-[\'Pacifico\']').classList.remove('text-white');
+navbar.querySelector('.font-[\'Pacifico\']').classList.add('text-primary');
+} else {
+navbar.classList.remove('nav-scrolled');
+navbar.querySelectorAll('a').forEach(link => {
+link.classList.remove('text-gray-800');
+link.classList.add('text-white');
+});
+navbar.querySelector('.font-[\'Pacifico\']').classList.remove('text-primary');
+navbar.querySelector('.font-[\'Pacifico\']').classList.add('text-white');
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Scroll animation for cards
+const animatedCards = document.querySelectorAll('.card-animate');
+const checkScroll = function() {
+animatedCards.forEach(card => {
+const cardTop = card.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
+if (cardTop < windowHeight * 0.85) {
+card.classList.add('visible');
+}
+});
+};
+window.addEventListener('scroll', checkScroll);
+checkScroll(); // Check on load
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Tab switching for map
+const tabButtons = document.querySelectorAll('.tab-button');
+tabButtons.forEach(button => {
+button.addEventListener('click', function() {
+tabButtons.forEach(btn => btn.classList.remove('active'));
+this.classList.add('active');
+});
+});
+});
+</script>
+</body>
+</html>

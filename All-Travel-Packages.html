@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Packages | Discover India's Magic</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#2A9D8F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+}
+.nav-scrolled {
+background-color: rgba(255, 255, 255, 0.95);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.package-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.package-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
+.custom-checkbox {
+position: relative;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e2e8f0;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+border-color: #CBD5E0;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #FF6B35;
+border-color: #FF6B35;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.custom-range::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.filter-dropdown {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.filter-dropdown.open {
+max-height: 500px;
+}
+.sort-button {
+transition: all 0.3s ease;
+}
+.sort-button.active {
+background-color: #FF6B35;
+color: white;
+}
+.page-link {
+transition: all 0.2s ease;
+}
+.page-link.active {
+background-color: #FF6B35;
+color: white;
+border-color: #FF6B35;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+.page-link.active:active {
+transform: scale(0.95);
+}
+.skeleton {
+background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+background-size: 200% 100%;
+animation: skeleton-loading 1.5s infinite;
+}
+@keyframes skeleton-loading {
+0% {
+background-position: 200% 0;
+}
+100% {
+background-position: -200% 0;
+}
+}
+.rating-stars .ri-star-fill {
+color: #FFD700;
+}
+.rating-stars .ri-star-line {
+color: #E2E8F0;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+          <a href="index.html" class="flex items-center text-gray-800">
+              <i class="ri-arrow-left-line mr-2"></i>
+              <span>Back to Home</span>
+          </a>
+      </div>
+      <h1 class="text-xl font-semibold text-gray-800">Travel Company</h1>
+      <div class="flex items-center">
+          <button class="w-10 h-10 flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-full">
+          </button>
+      </div>
+  </div>
+</nav>
+<!-- Page Header -->
+<section class="pt-32 pb-10 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col items-center text-center">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">All Travel Packages</h1>
+<p class="text-gray-600 max-w-2xl">Explore our comprehensive collection of premium travel experiences across India's most beautiful destinations.</p>
+<div class="flex items-center mt-6 text-sm text-gray-500">
+<a href="index.html" data-readdy="true" class="hover:text-primary transition-colors">Home</a>
+<span class="mx-2">/</span>
+<span class="text-primary">All Packages</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Packages Grid -->
+<section id="packages-section" class="py-10 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Package 1 -->
+<div class="package-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="goa.jpg" alt="Goa Beach Retreat" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Bestseller</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Goa Beach Retreat</h3>
+<div class="flex items-center">
+<div class="rating-stars flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1 text-gray-700">4.7</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Goa, India</span>
+</div>
+<p class="text-gray-600 mb-4">Experience the perfect beach holiday with pristine shores, water sports, and vibrant nightlife.</p>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$399</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>5 Days</span>
+</div>
+</div>
+<a href="goa all packages.html" data-readdy="true" class="block w-full">
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View Details</button>
+</a>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="package-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="manali.jpg" alt="Manali Winter Escape" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">20% Off</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Manali Winter Escape</h3>
+<div class="flex items-center">
+<div class="rating-stars flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1 text-gray-700">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Manali, Himachal Pradesh</span>
+</div>
+<p class="text-gray-600 mb-4">Discover snow-capped mountains, adventure sports, and cozy evenings by the fireplace.</p>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$349</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>6 Days</span>
+</div>
+</div>
+<a href="manali all packages.html" data-readdy="true" class="block w-full">
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View Details</button>
+</a>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="package-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="kashmir web.jpg" alt="Kashmir Houseboat Experience" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Premium</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Kashmir Houseboat Experience</h3>
+<div class="flex items-center">
+<div class="rating-stars flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-1 text-gray-700">4.9</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Srinagar, Kashmir</span>
+</div>
+<p class="text-gray-600 mb-4">Stay in traditional houseboats on Dal Lake and explore the breathtaking landscapes of Kashmir.</p>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$499</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>7 Days</span>
+</div>
+</div>
+<a href="kashmir all packages.html" data-readdy="true" class="block w-full">
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View Details</button>
+</a>
+</div>
+</div>
+<!-- Package 4 -->
+<div class="package-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="Backwaters of Alleppey.jpg" alt="Kerala Backwaters Cruise" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Kerala Backwaters Cruise</h3>
+<div class="flex items-center">
+<div class="rating-stars flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1 text-gray-700">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Alleppey, Kerala</span>
+</div>
+<p class="text-gray-600 mb-4">Cruise through serene backwaters on a traditional houseboat and experience Kerala's natural beauty.</p>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$599</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>6 Days</span>
+</div>
+</div>
+<a href="kerela all packages.html" data-readdy="true" class="block w-full">
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View Details</button>
+</a>
+</div>
+</div>
+<!-- Package 5 -->
+<div class="package-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="hawa-mahal-jaipur-rajasthan-city-1-hero.jpg" alt="Rajasthan Royal Heritage Tour" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Premium</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold">Rajasthan Royal Heritage Tour</h3>
+<div class="flex items-center">
+<div class="rating-stars flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-1 text-gray-700">4.9</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Jaipur, Udaipur, Jodhpur</span>
+</div>
+<p class="text-gray-600 mb-4">Explore magnificent palaces, ancient forts, and experience the royal heritage of Rajasthan.</p>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$899</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>10 Days</span>
+</div>
+</div>
+<a href="rajasthan all packages.html" data-readdy="true" class="block w-full">
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View Details</button>
+</a>
+</div>
+</div>
+<!-- Package 6 -->
+<div class="package-card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative h-56">
+<img src="rishikesh.jpg" alt="Ladakh Adventure Expedition" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-medium">Adventure</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold"> Rishikesh Adventure Expedition</h3>
+<div class="flex items-center">
+<div class="rating-stars flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1 text-gray-700">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-gray-500 mb-4">
+<i class="ri-map-pin-line mr-1"></i>
+<span>Rishikesh, Rajaji National Park, Ganga Rive</span>
+</div>
+<p class="text-gray-600 mb-4">Embark on an exhilarating journey through spiritual vibes, river rafting, lush forests, and serene landscapes.</p>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-gray-500">From</span>
+<span class="text-primary font-bold text-xl ml-1">$299</span>
+</div>
+<div class="text-gray-500">
+<i class="ri-time-line mr-1"></i>
+<span>5 Days</span>
+</div>
+</div>
+<a href="rishikesh all packages.html" data-readdy="true" class="block w-full">
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">View Details</button>
+</a>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex flex-col md:flex-row justify-between items-center">
+  <div class="mb-4 md:mb-0 text-gray-600">
+    Showing 1-6 of 6 packages
+  </div>
+  
+  <!-- Pagination buttons container (this is what you want to hide) -->
+  <div class="flex items-center hidden" id="pagination-buttons"> <!-- Added hidden class here -->
+    <div class="flex border border-gray-300 rounded-lg overflow-hidden">
+      <button class="px-4 py-2 bg-white text-gray-700 border-r border-gray-300 hover:bg-gray-50 disabled:opacity-50" disabled>
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+      <button class="page-link active w-10 h-10 flex items-center justify-center">1</button>
+      <button class="page-link w-10 h-10 flex items-center justify-center bg-white text-gray-700 border-l border-gray-300 hover:bg-gray-50">2</button>
+      <button class="px-4 py-2 bg-white text-gray-700 border-l border-gray-300 hover:bg-gray-50">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</section>
+<!-- Empty State (Hidden by default) -->
+<div id="empty-state" class="hidden py-16 bg-white">
+<div class="container mx-auto px-4 text-center">
+<div class="w-24 h-24 mx-auto mb-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-search-line text-gray-400 ri-2x"></i>
+</div>
+<h3 class="text-2xl font-bold mb-2">No packages found</h3>
+<p class="text-gray-600 max-w-md mx-auto mb-8">We couldn't find any packages that match your current filters. Try adjusting your search criteria.</p>
+<button class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+Clear All Filters
+</button>
+</div>
+</div>
+<!-- Newsletter Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="bg-primary/5 rounded-lg p-8 md:p-12">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-4">Get Travel Inspiration</h2>
+<p class="text-gray-600 mb-8">Subscribe to our newsletter for exclusive deals, travel tips, and destination guides.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded border-none focus:ring-2 focus:ring-primary">
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Subscribe</button>
+</div>
+<p class="text-gray-500 text-sm mt-4">By subscribing, you agree to our Privacy Policy and consent to receive travel-related emails.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">logo</a>
+<p class="text-gray-400 mb-6">Discover the magic of India with our expertly curated travel experiences. From majestic mountains to serene beaches, we bring you the best of India.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Popular Destinations</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kashmir</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Goa</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kerala</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Rajasthan</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Manali</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ladakh</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+<li><a href="https://readdy.ai/home/b7a2eafa-93ac-44a4-ba2e-12e6740a844e/49cf23b2-94ab-4529-8800-52b367767c71" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Information</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span class="text-gray-400">123 Travel Plaza, MG Road<br>Bangalore, Karnataka 560001<br>India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 98765 43210</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">info@indiamagictravel.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 India Magic Travel. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-400 text-sm">We Accept:</span>
+<div class="flex space-x-2">
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-amazon-pay-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile filter toggle
+const mobileFilterToggle = document.getElementById('mobile-filter-toggle');
+const filterContainer = document.getElementById('filter-container');
+if (mobileFilterToggle && filterContainer) {
+mobileFilterToggle.addEventListener('click', function() {
+filterContainer.classList.toggle('open');
+});
+}
+// Add active page click animation and functionality
+function handleActivePageClick(event) {
+  const activeButton = event.currentTarget;
+  if(activeButton.classList.contains('active')) {
+    // Add ripple effect
+    activeButton.style.transform = 'scale(0.95)';
+    activeButton.style.transition = 'transform 0.1s ease';
+    
+    setTimeout(() => {
+      activeButton.style.transform = 'scale(1)';
+    }, 100);
+    // Scroll to top of packages section
+    document.getElementById('packages-section').scrollIntoView({ behavior: 'smooth' });
+    // Simulate data refresh
+    const packagesGrid = document.querySelector('.grid.grid-cols-1');
+    if(packagesGrid) {
+      packagesGrid.style.opacity = '0.6';
+      packagesGrid.style.transition = 'opacity 0.3s ease';
+      
+      setTimeout(() => {
+        packagesGrid.style.opacity = '1';
+      }, 300);
+    }
+  }
+}
+// Add click handler to active page button
+const activePageButton = document.querySelector('.page-link.active');
+if(activePageButton) {
+  activePageButton.addEventListener('click', handleActivePageClick);
+}
+// Price range slider
+const priceRange = document.getElementById('price-range');
+const priceValue = document.getElementById('price-value');
+if (priceRange && priceValue) {
+priceRange.addEventListener('input', function() {
+priceValue.textContent = '$' + this.value;
+});
+}
+// Sort buttons
+const sortButtons = document.querySelectorAll('.sort-button');
+sortButtons.forEach(button => {
+button.addEventListener('click', function() {
+sortButtons.forEach(btn => btn.classList.remove('active'));
+this.classList.add('active');
+});
+});
+// Pagination
+let currentPage = 1;
+const totalPages = 2;
+const packagesPerPage = 9;
+const totalPackages = 15;
+function updatePaginationUI() {
+const prevButton = document.querySelector('button[disabled] i.ri-arrow-left-s-line').parentElement;
+const nextButton = document.querySelector('button i.ri-arrow-right-s-line').parentElement;
+const pageButtons = document.querySelectorAll('.page-link');
+const packagesCountText = document.querySelector('.text-gray-600');
+// Update page buttons
+pageButtons.forEach((btn, index) => {
+btn.classList.toggle('active', index + 1 === currentPage);
+});
+// Update navigation buttons
+prevButton.disabled = currentPage === 1;
+nextButton.disabled = currentPage === totalPages;
+// Update packages count text
+const startCount = (currentPage - 1) * packagesPerPage + 1;
+const endCount = Math.min(currentPage * packagesPerPage, totalPackages);
+packagesCountText.textContent = `Showing ${startCount}-${endCount} of ${totalPackages} packages`;
+// Scroll to top of packages section
+document.querySelector('.py-10.bg-white').scrollIntoView({ behavior: 'smooth' });
+}
+// Handle next page click
+const nextButton = document.querySelector('button i.ri-arrow-right-s-line').parentElement;
+nextButton.addEventListener('click', () => {
+if (currentPage < totalPages) {
+currentPage++;
+updatePaginationUI();
+}
+});
+// Handle previous page click
+const prevButton = document.querySelector('button[disabled] i.ri-arrow-left-s-line').parentElement;
+prevButton.addEventListener('click', () => {
+if (currentPage > 1) {
+currentPage--;
+updatePaginationUI();
+}
+});
+// Handle page number clicks
+const pageLinks = document.querySelectorAll('.page-link');
+pageLinks.forEach((link, index) => {
+link.addEventListener('click', function() {
+currentPage = index + 1;
+updatePaginationUI();
+});
+});
+});
+</script>
+</body>
+</html>

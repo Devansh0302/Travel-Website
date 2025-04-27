@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your India Journey</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#3A86FF'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #FF6B35;
+            border-color: #FF6B35;
+        }
+        .checkmark:after {
+            content: "";
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-radio {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .custom-radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .radiomark {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .custom-radio input:checked ~ .radiomark {
+            border-color: #FF6B35;
+        }
+        .radiomark:after {
+            content: "";
+            display: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #FF6B35;
+        }
+        .custom-radio input:checked ~ .radiomark:after {
+            display: block;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 24px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e5e7eb;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #FF6B35;
+        }
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: #e5e7eb;
+            outline: none;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FF6B35;
+            cursor: pointer;
+        }
+        .range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FF6B35;
+            cursor: pointer;
+        }
+        .date-picker {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+        }
+        .tab-active {
+            background-color: #FF6B35;
+            color: white;
+        }
+        .destination-card.selected {
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.3);
+        }
+        .step-indicator {
+            position: relative;
+        }
+        .step-indicator::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #e5e7eb;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header Navigation -->
+        <header class="bg-white shadow-sm py-4 px-6">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center text-gray-800">
+                    <div class="w-8 h-8 flex items-center justify-center mr-2">
+                            <i class="ri-arrow-left-line ri-lg"></i>
+                        </div>
+                        <span>Back to Home</span>
+                    </a>
+                </div>
+                <div class="font-['Pacifico'] text-primary text-2xl">logo</div>
+                <div class="w-8 h-8 flex items-center justify-center cursor-pointer text-gray-700 hover:text-primary transition">
+                    <i class="ri-close-line ri-lg"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <div class="container mx-auto px-6 py-8 max-w-6xl">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Plan Your Dream India Journey</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Follow our step-by-step wizard to create your perfect customized travel experience in incredible India.</p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="step-indicator flex justify-between mb-12 px-4">
+                    <div class="step-item flex flex-col items-center z-10">
+                        <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-2">1</div>
+                        <span class="text-sm font-medium text-primary">Destinations</span>
+                    </div>
+                    <div class="step-item flex flex-col items-center z-10">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mb-2">2</div>
+                        <span class="text-sm font-medium text-gray-600">Dates</span>
+                    </div>
+                    <div class="step-item flex flex-col items-center z-10">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mb-2">3</div>
+                        <span class="text-sm font-medium text-gray-600">Travelers</span>
+                    </div>
+                    <div class="step-item flex flex-col items-center z-10">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mb-2">4</div>
+                        <span class="text-sm font-medium text-gray-600">Preferences</span>
+                    </div>
+                    <div class="step-item flex flex-col items-center z-10">
+                        <div class="w-10 h-10 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center mb-2">5</div>
+                        <span class="text-sm font-medium text-gray-600">Packages</span>
+                    </div>
+                </div>
+                <!-- Step 1: Destination Selection -->
+                <div class="step-content" id="step1">
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Choose Your Destinations</h2>
+                        <p class="text-gray-600 mb-6">Select the regions or cities in India you'd like to visit. You can choose multiple destinations for your journey.</p>
+                        
+                        <!-- Map of India -->
+                        <div class="mb-8 rounded-lg overflow-hidden h-64 relative">
+                            <div style="background-image: url('blog-article-bg-googlemaps-1.jpg '); background-position: center; background-size: cover; width: 100%; height: 100%;"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                                <span class="text-white text-lg font-medium">Interactive Map Coming Soon</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Popular Destinations</h3>
+                        
+                        <!-- Destination Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                            <!-- Destination Card 1 -->
+                            <div class="destination-card border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition">
+                                <div class="h-40 overflow-hidden">
+                                    <img src="manali.jpg" alt="Manali" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-gray-800 font-medium">Manali</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="destination-checkbox" value="Agra">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">A scenic hill station in Himachal Pradesh, great for adventure sports.</p>
+                                </div>
+                            </div>
+
+                            <!-- Destination Card 2 -->
+                            <div class="destination-card border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition">
+                                <div class="h-40 overflow-hidden">
+                                    <img src="Rajasthan-Udaipur-scaled.jpg" alt="Jaipur" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-gray-800 font-medium">Rajasthan</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="destination-checkbox" value="Jaipur">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-gray-600 text-sm"> land of royal heritage, with majestic forts, palaces, and vibrant culture.</p>
+                                </div>
+                            </div>
+
+                            <!-- Destination Card 3 -->
+                            <div class="destination-card border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition">
+                                <div class="h-40 overflow-hidden">
+                                    <img src="rishikesh.jpg" alt="Varanasi" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-gray-800 font-medium">Rishikesh</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="destination-checkbox" value="Varanasi">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Famous for its landscapes, monasteries, and adventure activities.</p>
+                                </div>
+                            </div>
+
+                            <!-- Destination Card 4 -->
+                            <div class="destination-card border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition">
+                                <div class="h-40 overflow-hidden">
+                                    <img src="https://readdy.ai/api/search-image?query=Serene%20Kerala%20backwaters%20with%20traditional%20houseboat%2C%20lush%20green%20palm%20trees%2C%20calm%20waters%20reflecting%20the%20sky%2C%20and%20local%20village%20life.%20Professional%20travel%20photography%20with%20perfect%20lighting%20and%20vibrant%20natural%20colors.&width=400&height=300&seq=4&orientation=landscape" alt="Kerala" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-gray-800 font-medium">Kerala</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="destination-checkbox" value="Kerala">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Serene backwaters, lush tea plantations, and Ayurvedic retreats</p>
+                                </div>
+                            </div>
+
+                            <!-- Destination Card 5 -->
+                            <div class="destination-card border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition">
+                                <div class="h-40 overflow-hidden">
+                                    <img src="https://readdy.ai/api/search-image?query=Majestic%20view%20of%20Goa%20beaches%20with%20pristine%20white%20sand%2C%20clear%20blue%20water%2C%20palm%20trees%2C%20and%20colorful%20beach%20shacks.%20Professional%20travel%20photography%20with%20perfect%20lighting%20capturing%20the%20vibrant%20coastal%20atmosphere.&width=400&height=300&seq=5&orientation=landscape" alt="Goa" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-gray-800 font-medium">Goa</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="destination-checkbox" value="Goa">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Beautiful beaches, Portuguese architecture, and vibrant nightlife</p>
+                                </div>
+                            </div>
+
+                            <!-- Destination Card 6 -->
+                            <div class="destination-card border border-gray-200 rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition">
+                                <div class="h-40 overflow-hidden">
+                                    <img src="kashmir web.jpg" alt="Darjeeling" class="w-full h-full object-cover object-top">
+                                </div>
+                                <div class="p-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="text-gray-800 font-medium">Kashmir</h4>
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox" class="destination-checkbox" value="Darjeeling">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="text-gray-600 text-sm">Paradise on Earth, with stunning gardens, lakes, and mountains.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="selected-destinations" class="bg-gray-50 rounded-lg p-4 mb-6 hidden">
+                            <h3 class="text-lg font-medium text-gray-800 mb-2">Your Selected Destinations</h3>
+                            <div class="flex flex-wrap gap-2" id="destination-tags"></div>
+                        </div>
+
+                        <div class="text-sm text-gray-600">
+                            <div class="flex items-start mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                                <p>Select at least one destination to proceed. We recommend 2-3 destinations for a 7-day trip.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between">
+                        <button class="px-6 py-2 border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition whitespace-nowrap">Cancel</button>
+                        <button id="next-to-step2" class="px-6 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition whitespace-nowrap">Continue to Dates</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Travel Dates (Hidden initially) -->
+                <div class="step-content hidden" id="step2">
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Select Your Travel Dates</h2>
+                        <p class="text-gray-600 mb-6">Choose when you'd like to start and end your journey in India.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Travel Period</h3>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Departure Date</label>
+                                    <input type="date" class="date-picker" id="departure-date">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Return Date</label>
+                                    <input type="date" class="date-picker" id="return-date">
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-gray-700 font-medium">Trip Duration:</span>
+                                        <span class="text-primary font-medium" id="trip-duration">0 days</span>
+                                    </div>
+                                    <div class="text-sm text-gray-600">
+                                        We recommend at least 2-3 days per destination for the best experience.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Seasonal Information</h3>
+                                <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                                    <h4 class="font-medium text-gray-800 mb-2">Best Time to Visit</h4>
+                                    <div class="grid grid-cols-2 gap-2 mb-2">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+                                            <span class="text-sm text-gray-700">Oct - Mar: Peak Season</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                                            <span class="text-sm text-gray-700">Apr - Jun: Summer</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
+                                            <span class="text-sm text-gray-700">Jul - Sep: Monsoon</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
+                                            <span class="text-sm text-gray-700">Various: Festivals</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h4 class="font-medium text-gray-800 mb-2">Weather for Selected Period</h4>
+                                    <p class="text-sm text-gray-600 mb-2">Select your travel dates to see weather information for your chosen destinations.</p>
+                                    <div id="weather-info" class="hidden">
+                                        <div class="flex items-center justify-between mb-1">
+                                            <span class="text-sm text-gray-700">Average Temperature:</span>
+                                            <span class="text-sm font-medium">25°C - 32°C</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-sm text-gray-700">Precipitation:</span>
+                                            <span class="text-sm font-medium">Low</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-gray-600">
+                            <div class="flex items-start mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                                <p>Prices may vary based on season. Peak tourist seasons (October-March) typically have higher rates but better weather conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between">
+                        <button id="back-to-step1" class="px-6 py-2 border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button id="next-to-step3" class="px-6 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition whitespace-nowrap">Continue to Travelers</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Traveler Details (Hidden initially) -->
+                <div class="step-content hidden" id="step3">
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Traveler Details</h2>
+                        <p class="text-gray-600 mb-6">Tell us who will be joining this incredible journey.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Number of Travelers</h3>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Adults (12+ years)</label>
+                                    <div class="flex items-center">
+                                        <button class="w-10 h-10 bg-gray-100 rounded-l-lg flex items-center justify-center text-gray-700 hover:bg-gray-200 transition" id="decrease-adults">
+                                            <i class="ri-subtract-line"></i>
+                                        </button>
+                                        <input type="number" min="1" value="2" class="w-16 h-10 border-y border-gray-200 text-center text-gray-800" id="adults-count">
+                                        <button class="w-10 h-10 bg-gray-100 rounded-r-lg flex items-center justify-center text-gray-700 hover:bg-gray-200 transition" id="increase-adults">
+                                            <i class="ri-add-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Children (2-11 years)</label>
+                                    <div class="flex items-center">
+                                        <button class="w-10 h-10 bg-gray-100 rounded-l-lg flex items-center justify-center text-gray-700 hover:bg-gray-200 transition" id="decrease-children">
+                                            <i class="ri-subtract-line"></i>
+                                        </button>
+                                        <input type="number" min="0" value="0" class="w-16 h-10 border-y border-gray-200 text-center text-gray-800" id="children-count">
+                                        <button class="w-10 h-10 bg-gray-100 rounded-r-lg flex items-center justify-center text-gray-700 hover:bg-gray-200 transition" id="increase-children">
+                                            <i class="ri-add-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Infants (0-23 months)</label>
+                                    <div class="flex items-center">
+                                        <button class="w-10 h-10 bg-gray-100 rounded-l-lg flex items-center justify-center text-gray-700 hover:bg-gray-200 transition" id="decrease-infants">
+                                            <i class="ri-subtract-line"></i>
+                                        </button>
+                                        <input type="number" min="0" value="0" class="w-16 h-10 border-y border-gray-200 text-center text-gray-800" id="infants-count">
+                                        <button class="w-10 h-10 bg-gray-100 rounded-r-lg flex items-center justify-center text-gray-700 hover:bg-gray-200 transition" id="increase-infants">
+                                            <i class="ri-add-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-lg p-4">
+                                    <h4 class="font-medium text-gray-800 mb-2">Room Configuration</h4>
+                                    <div class="mb-2">
+                                        <label class="custom-radio flex items-center mb-2">
+                                            <input type="radio" name="room-config" value="single" checked>
+                                            <span class="radiomark mr-2"></span>
+                                            <span class="text-gray-700">Single Room</span>
+                                        </label>
+                                        <label class="custom-radio flex items-center mb-2">
+                                            <input type="radio" name="room-config" value="double">
+                                            <span class="radiomark mr-2"></span>
+                                            <span class="text-gray-700">Double Room</span>
+                                        </label>
+                                        <label class="custom-radio flex items-center">
+                                            <input type="radio" name="room-config" value="family">
+                                            <span class="radiomark mr-2"></span>
+                                            <span class="text-gray-700">Family Room</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Contact Information</h3>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Full Name</label>
+                                    <input type="text" class="w-full border border-gray-200 rounded-lg p-3 text-gray-800" placeholder="John Smith">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
+                                    <input type="email" class="w-full border border-gray-200 rounded-lg p-3 text-gray-800" placeholder="john.smith@example.com">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
+                                    <input type="tel" class="w-full border border-gray-200 rounded-lg p-3 text-gray-800" placeholder="+1 (555) 123-4567">
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Special Requirements</label>
+                                    <textarea class="w-full border border-gray-200 rounded-lg p-3 text-gray-800 h-24" placeholder="Any dietary restrictions, accessibility needs, or other special requests?"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-gray-600">
+                            <div class="flex items-start mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                                <p>Your contact information will only be used to communicate about this trip. We respect your privacy and will never share your information with third parties.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between">
+                        <button id="back-to-step2" class="px-6 py-2 border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button id="next-to-step4" class="px-6 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition whitespace-nowrap">Continue to Preferences</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Preferences & Budget (Hidden initially) -->
+                <div class="step-content hidden" id="step4">
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Travel Preferences & Budget</h2>
+                        <p class="text-gray-600 mb-6">Tell us about your preferences to help us create the perfect itinerary for you.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Accommodation Preferences</h3>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Accommodation Type</label>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="accommodation-type" value="luxury" checked>
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Luxury (5-star)</span>
+                                                <p class="text-gray-600 text-sm mt-1">Premium accommodations with exceptional service and amenities</p>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="accommodation-type" value="mid-range">
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Mid-Range (3-4 star)</span>
+                                                <p class="text-gray-600 text-sm mt-1">Comfortable accommodations with good amenities</p>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="accommodation-type" value="budget">
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Budget (2-3 star)</span>
+                                                <p class="text-gray-600 text-sm mt-1">Simple, clean accommodations with basic amenities</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Meal Preferences</h3>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Meal Plan</label>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="meal-plan" value="all-inclusive" checked>
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">All-Inclusive</span>
+                                                <p class="text-gray-600 text-sm mt-1">All meals included (breakfast, lunch, dinner)</p>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="meal-plan" value="half-board">
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Half Board</span>
+                                                <p class="text-gray-600 text-sm mt-1">Breakfast and dinner included</p>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="meal-plan" value="breakfast-only">
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Breakfast Only</span>
+                                                <p class="text-gray-600 text-sm mt-1">Only breakfast included</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Budget Range</h3>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Per Person Budget (USD)</label>
+                                    <div class="mb-2">
+                                        <input type="range" min="500" max="5000" step="100" value="1500" class="range-slider" id="budget-slider">
+                                    </div>
+                                    <div class="flex justify-between text-sm text-gray-600">
+                                        <span>$500</span>
+                                        <span id="budget-value" class="font-medium text-primary">$1,500</span>
+                                        <span>$5,000</span>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Activity Preferences</h3>
+                                
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">What interests you? (Select all that apply)</label>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="cultural" checked>
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Cultural Experiences</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="historical" checked>
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Historical Sites</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="adventure">
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Adventure Activities</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="wildlife">
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Wildlife & Nature</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="culinary">
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Culinary Experiences</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="spiritual">
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Spiritual Retreats</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="shopping">
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Shopping</span>
+                                        </label>
+                                        <label class="custom-checkbox flex items-center mb-2">
+                                            <input type="checkbox" name="activities" value="relaxation">
+                                            <span class="checkmark mr-2"></span>
+                                            <span class="text-gray-700">Relaxation & Wellness</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-lg font-medium text-gray-800 mb-4">Transportation Preferences</h3>
+                                
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2">Preferred Transportation</label>
+                                    <div class="grid grid-cols-1 gap-2">
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="transportation" value="private" checked>
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Private Transportation</span>
+                                                <p class="text-gray-600 text-sm mt-1">Dedicated vehicle with driver</p>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="transportation" value="shared">
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Shared Transportation</span>
+                                                <p class="text-gray-600 text-sm mt-1">Group transfers between destinations</p>
+                                            </div>
+                                        </label>
+                                        <label class="custom-radio flex items-center p-3 border border-gray-200 rounded-lg hover:border-gray-300 transition">
+                                            <input type="radio" name="transportation" value="public">
+                                            <span class="radiomark mr-3"></span>
+                                            <div>
+                                                <span class="text-gray-800 font-medium">Public Transportation</span>
+                                                <p class="text-gray-600 text-sm mt-1">Trains, buses, and local transport</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-gray-600">
+                            <div class="flex items-start mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                                <p>Your preferences help us create a customized itinerary. You'll be able to refine these choices after seeing our recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between">
+                        <button id="back-to-step3" class="px-6 py-2 border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button id="next-to-step5" class="px-6 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition whitespace-nowrap">See Recommendations</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Package Recommendations (Hidden initially) -->
+                <div class="step-content hidden" id="step5">
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Your Personalized Recommendations</h2>
+                        <p class="text-gray-600 mb-6">Based on your preferences, we've created these custom travel packages for you.</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex overflow-x-auto pb-2 mb-4">
+                                <div class="flex space-x-2 p-1 bg-gray-100 rounded-full">
+                                    <button class="px-4 py-2 rounded-full tab-active whitespace-nowrap" data-tab="all">All Packages</button>
+                                    <button class="px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-tab="best-value">Best Value</button>
+                                    <button class="px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-tab="luxury">Luxury</button>
+                                    <button class="px-4 py-2 rounded-full text-gray-700 hover:bg-gray-200 whitespace-nowrap" data-tab="budget">Budget</button>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Package Card 1 -->
+                                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
+                                    <div class="relative">
+                                        <img src="https://readdy.ai/api/search-image?query=Stunning%20view%20of%20Taj%20Mahal%20at%20sunrise%20with%20beautiful%20colors%2C%20clear%20sky%2C%20and%20reflection%20in%20water.%20Professional%20travel%20photography%20with%20perfect%20lighting%2C%20vibrant%20colors%2C%20and%20architectural%20details.%20Simple%20clean%20background.&width=400&height=250&seq=7&orientation=landscape" alt="Golden Triangle Tour" class="w-full h-48 object-cover object-top">
+                                        <div class="absolute top-2 right-2 bg-primary text-white text-xs font-medium px-2 py-1 rounded">Best Seller</div>
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Golden Triangle Tour</h3>
+                                        <div class="flex items-center mb-2">
+                                            <div class="flex text-yellow-400">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-half-fill"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-600 ml-1">4.5 (128 reviews)</span>
+                                        </div>
+                                        <p class="text-gray-600 text-sm mb-3">Explore Delhi, Agra, and Jaipur in this classic introduction to India's rich history and culture.</p>
+                                        <div class="flex flex-wrap gap-1 mb-3">
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">7 Days</span>
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Cultural</span>
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Historical</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <span class="text-gray-500 text-sm line-through">$1,899</span>
+                                                <span class="text-primary font-semibold ml-1">$1,599</span>
+                                                <span class="text-gray-600 text-xs">/person</span>
+                                            </div>
+                                            <button class="px-3 py-1.5 bg-primary text-white rounded-button text-sm hover:bg-opacity-90 transition whitespace-nowrap">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Package Card 2 -->
+                                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
+                                    <div class="relative">
+                                        <img src="https://readdy.ai/api/search-image?query=Serene%20Kerala%20backwaters%20with%20traditional%20houseboat%2C%20lush%20palm%20trees%2C%20calm%20water%20reflections%2C%20and%20peaceful%20atmosphere.%20Professional%20travel%20photography%20with%20vibrant%20greens%2C%20blue%20sky%2C%20and%20perfect%20lighting.%20Simple%20clean%20background.&width=400&height=250&seq=8&orientation=landscape" alt="Kerala Backwaters Escape" class="w-full h-48 object-cover object-top">
+                                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-medium px-2 py-1 rounded">20% Off</div>
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Kerala Backwaters Escape</h3>
+                                        <div class="flex items-center mb-2">
+                                            <div class="flex text-yellow-400">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-600 ml-1">4.9 (86 reviews)</span>
+                                        </div>
+                                        <p class="text-gray-600 text-sm mb-3">Relax on a houseboat, explore tea plantations, and enjoy Ayurvedic treatments in God's Own Country.</p>
+                                        <div class="flex flex-wrap gap-1 mb-3">
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">6 Days</span>
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Relaxation</span>
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Nature</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <span class="text-gray-500 text-sm line-through">$1,799</span>
+                                                <span class="text-primary font-semibold ml-1">$1,439</span>
+                                                <span class="text-gray-600 text-xs">/person</span>
+                                            </div>
+                                            <button class="px-3 py-1.5 bg-primary text-white rounded-button text-sm hover:bg-opacity-90 transition whitespace-nowrap">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Package Card 3 -->
+                                <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition">
+                                    <div class="relative">
+                                        <img src="https://readdy.ai/api/search-image?query=Luxury%20beach%20resort%20in%20Goa%20with%20pristine%20white%20sand%2C%20turquoise%20water%2C%20palm%20trees%2C%20and%20elegant%20beach%20cabanas.%20Professional%20travel%20photography%20with%20vibrant%20colors%2C%20perfect%20lighting%2C%20and%20inviting%20atmosphere.%20Simple%20clean%20background.&width=400&height=250&seq=9&orientation=landscape" alt="Goa Beach Retreat" class="w-full h-48 object-cover object-top">
+                                    </div>
+                                    <div class="p-4">
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Goa Beach Retreat</h3>
+                                        <div class="flex items-center mb-2">
+                                            <div class="flex text-yellow-400">
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-star-line"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-600 ml-1">4.0 (112 reviews)</span>
+                                        </div>
+                                        <p class="text-gray-600 text-sm mb-3">Enjoy the perfect blend of relaxation, adventure, and vibrant nightlife on Goa's beautiful beaches.</p>
+                                        <div class="flex flex-wrap gap-1 mb-3">
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">5 Days</span>
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Beach</span>
+                                            <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">Adventure</span>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <span class="text-primary font-semibold">$1,299</span>
+                                                <span class="text-gray-600 text-xs">/person</span>
+                                            </div>
+                                            <button class="px-3 py-1.5 bg-primary text-white rounded-button text-sm hover:bg-opacity-90 transition whitespace-nowrap">View Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                            <h3 class="text-lg font-medium text-gray-800 mb-4">Customize Your Experience</h3>
+                            <p class="text-gray-600 mb-4">Want something more tailored to your specific needs? Our travel experts can create a fully customized itinerary just for you.</p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button class="px-6 py-2 bg-white border border-primary text-primary rounded-button hover:bg-gray-50 transition whitespace-nowrap">Request Custom Itinerary</button>
+                                <button class="px-6 py-2 bg-white border border-gray-300 text-gray-700 rounded-button hover:bg-gray-50 transition whitespace-nowrap">Speak to a Travel Expert</button>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-gray-600">
+                            <div class="flex items-start mb-2">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                                <p>All packages include accommodation, meals as per plan, guided tours, and transportation. International flights are not included. Prices are based on double occupancy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between">
+                        <button id="back-to-step4" class="px-6 py-2 border border-gray-300 rounded-button text-gray-700 hover:bg-gray-50 transition whitespace-nowrap">Previous</button>
+                        <button class="px-6 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition whitespace-nowrap">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="font-['Pacifico'] text-primary text-2xl mb-4">logo</div>
+                        <p class="text-gray-400 mb-4">Creating unforgettable journeys across incredible India since 2010.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-facebook-fill"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-twitter-fill"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-instagram-fill"></i>
+                                </div>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition">
+                                <div class="w-8 h-8 flex items-center justify-center">
+                                    <i class="ri-youtube-fill"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Destinations</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Tour Packages</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-4">Contact Us</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-400">
+                                    <i class="ri-map-pin-line"></i>
+                                </div>
+                                <span class="text-gray-400">123 Travel Street, New Delhi, India</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-400">
+                                    <i class="ri-phone-line"></i>
+                                </div>
+                                <span class="text-gray-400">+91 98765 43210</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-400">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <span class="text-gray-400">info@indiajourney.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium mb-4">Newsletter</h3>
+                        <p class="text-gray-400 mb-4">Subscribe to receive updates on new destinations and special offers.</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-l-lg w-full border-none text-gray-800 text-sm">
+                            <button class="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-opacity-90 transition whitespace-nowrap">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 India Journey. All rights reserved.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Step navigation
+            const steps = ['step1', 'step2', 'step3', 'step4', 'step5'];
+            
+            // Step 1 to Step 2
+            document.getElementById('next-to-step2').addEventListener('click', function() {
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+                updateStepIndicators(2);
+            });
+            
+            // Step 2 to Step 1
+            document.getElementById('back-to-step1').addEventListener('click', function() {
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step1').classList.remove('hidden');
+                updateStepIndicators(1);
+            });
+            
+            // Step 2 to Step 3
+            document.getElementById('next-to-step3').addEventListener('click', function() {
+                document.getElementById('step2').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+                updateStepIndicators(3);
+            });
+            
+            // Step 3 to Step 2
+            document.getElementById('back-to-step2').addEventListener('click', function() {
+                document.getElementById('step3').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+                updateStepIndicators(2);
+            });
+            
+            // Step 3 to Step 4
+            document.getElementById('next-to-step4').addEventListener('click', function() {
+                document.getElementById('step3').classList.add('hidden');
+                document.getElementById('step4').classList.remove('hidden');
+                updateStepIndicators(4);
+            });
+            
+            // Step 4 to Step 3
+            document.getElementById('back-to-step3').addEventListener('click', function() {
+                document.getElementById('step4').classList.add('hidden');
+                document.getElementById('step3').classList.remove('hidden');
+                updateStepIndicators(3);
+            });
+            
+            // Step 4 to Step 5
+            document.getElementById('next-to-step5').addEventListener('click', function() {
+                document.getElementById('step4').classList.add('hidden');
+                document.getElementById('step5').classList.remove('hidden');
+                updateStepIndicators(5);
+            });
+            
+            // Step 5 to Step 4
+            document.getElementById('back-to-step4').addEventListener('click', function() {
+                document.getElementById('step5').classList.add('hidden');
+                document.getElementById('step4').classList.remove('hidden');
+                updateStepIndicators(4);
+            });
+            
+            // Update step indicators
+            function updateStepIndicators(activeStep) {
+                const stepItems = document.querySelectorAll('.step-item');
+                stepItems.forEach((item, index) => {
+                    const stepNumber = index + 1;
+                    const circle = item.querySelector('div');
+                    const text = item.querySelector('span');
+                    
+                    if (stepNumber < activeStep) {
+                        // Completed steps
+                        circle.classList.remove('bg-gray-200', 'text-gray-600');
+                        circle.classList.add('bg-primary', 'text-white');
+                        text.classList.remove('text-gray-600');
+                        text.classList.add('text-primary');
+                    } else if (stepNumber === activeStep) {
+                        // Current step
+                        circle.classList.remove('bg-gray-200', 'text-gray-600');
+                        circle.classList.add('bg-primary', 'text-white');
+                        text.classList.remove('text-gray-600');
+                        text.classList.add('text-primary');
+                    } else {
+                        // Upcoming steps
+                        circle.classList.remove('bg-primary', 'text-white');
+                        circle.classList.add('bg-gray-200', 'text-gray-600');
+                        text.classList.remove('text-primary');
+                        text.classList.add('text-gray-600');
+                    }
+                });
+            }
+            
+            // Destination selection
+            const destinationCheckboxes = document.querySelectorAll('.destination-checkbox');
+            const selectedDestinationsContainer = document.getElementById('selected-destinations');
+            const destinationTags = document.getElementById('destination-tags');
+            
+            destinationCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const destinationCard = this.closest('.destination-card');
+                    
+                    if (this.checked) {
+                        destinationCard.classList.add('selected');
+                    } else {
+                        destinationCard.classList.remove('selected');
+                    }
+                    
+                    updateSelectedDestinations();
+                });
+            });
+            
+            function updateSelectedDestinations() {
+                const selectedCheckboxes = document.querySelectorAll('.destination-checkbox:checked');
+                destinationTags.innerHTML = '';
+                
+                if (selectedCheckboxes.length > 0) {
+                    selectedDestinationsContainer.classList.remove('hidden');
+                    
+                    selectedCheckboxes.forEach(checkbox => {
+                        const destinationName = checkbox.value;
+                        const tag = document.createElement('div');
+                        tag.className = 'bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-full text-sm flex items-center';
+                        tag.innerHTML = `
+                            ${destinationName}
+                            <button class="ml-2 text-primary hover:text-primary-dark" data-destination="${destinationName}">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-close-line"></i>
+                                </div>
+                            </button>
+                        `;
+                        destinationTags.appendChild(tag);
+                        
+                        // Add remove event
+                        tag.querySelector('button').addEventListener('click', function() {
+                            const destinationToRemove = this.getAttribute('data-destination');
+                            document.querySelectorAll('.destination-checkbox').forEach(cb => {
+                                if (cb.value === destinationToRemove) {
+                                    cb.checked = false;
+                                    cb.closest('.destination-card').classList.remove('selected');
+                                }
+                            });
+                            updateSelectedDestinations();
+                        });
+                    });
+                } else {
+                    selectedDestinationsContainer.classList.add('hidden');
+                }
+            }
+            
+            // Date selection and trip duration calculation
+            const departureDate = document.getElementById('departure-date');
+            const returnDate = document.getElementById('return-date');
+            const tripDuration = document.getElementById('trip-duration');
+            const weatherInfo = document.getElementById('weather-info');
+            
+            // Set min date to today
+            const today = new Date();
+            const formattedToday = today.toISOString().split('T')[0];
+            departureDate.setAttribute('min', formattedToday);
+            returnDate.setAttribute('min', formattedToday);
+            
+            function updateTripDuration() {
+                if (departureDate.value && returnDate.value) {
+                    const start = new Date(departureDate.value);
+                    const end = new Date(returnDate.value);
+                    
+                    if (end >= start) {
+                        const diffTime = Math.abs(end - start);
+                        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+                        tripDuration.textContent = `${diffDays} days`;
+                        weatherInfo.classList.remove('hidden');
+                    } else {
+                        tripDuration.textContent = 'Invalid dates';
+                        weatherInfo.classList.add('hidden');
+                    }
+                } else {
+                    tripDuration.textContent = '0 days';
+                    weatherInfo.classList.add('hidden');
+                }
+            }
+            
+            departureDate.addEventListener('change', function() {
+                // Set min return date to departure date
+                returnDate.setAttribute('min', this.value);
+                updateTripDuration();
+            });
+            
+            returnDate.addEventListener('change', updateTripDuration);
+            
+            // Traveler count controls
+            setupCounterControl('adults-count', 'increase-adults', 'decrease-adults', 1);
+            setupCounterControl('children-count', 'increase-children', 'decrease-children', 0);
+            setupCounterControl('infants-count', 'increase-infants', 'decrease-infants', 0);
+            
+            function setupCounterControl(inputId, increaseId, decreaseId, minValue) {
+                const input = document.getElementById(inputId);
+                const increaseBtn = document.getElementById(increaseId);
+                const decreaseBtn = document.getElementById(decreaseId);
+                
+                increaseBtn.addEventListener('click', function() {
+                    input.value = parseInt(input.value) + 1;
+                });
+                
+                decreaseBtn.addEventListener('click', function() {
+                    if (parseInt(input.value) > minValue) {
+                        input.value = parseInt(input.value) - 1;
+                    }
+                });
+            }
+            
+            // Budget slider
+            const budgetSlider = document.getElementById('budget-slider');
+            const budgetValue = document.getElementById('budget-value');
+            
+            budgetSlider.addEventListener('input', function() {
+                budgetValue.textContent = '$' + parseInt(this.value).toLocaleString();
+            });
+            
+            // Package tab switching
+            const packageTabs = document.querySelectorAll('[data-tab]');
+            
+            packageTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    packageTabs.forEach(t => {
+                        t.classList.remove('tab-active');
+                        t.classList.add('text-gray-700', 'hover:bg-gray-200');
+                    });
+                    
+                    this.classList.add('tab-active');
+                    this.classList.remove('text-gray-700', 'hover:bg-gray-200');
+                    
+                    // Here you would filter packages based on the selected tab
+                    // For this demo, we're just switching the active state
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kashmir - Heaven on Earth | Discover India's Magic</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#FF6B35',secondary:'#2A9D8F'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+scroll-behavior: smooth;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('kashmir web.jpg');
+background-size: cover;
+background-position: center;
+}
+.nav-scrolled {
+background-color: rgba(255, 255, 255, 0.95);
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.custom-checkbox {
+position: relative;
+cursor: pointer;
+user-select: none;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e2e8f0;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+border-color: #CBD5E0;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #FF6B35;
+border-color: #FF6B35;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.gallery-item {
+transition: transform 0.3s ease;
+}
+.gallery-item:hover {
+transform: scale(1.03);
+}
+.tab-button {
+transition: all 0.3s ease;
+}
+.tab-button.active {
+background-color: #FF6B35;
+color: white;
+}
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.accordion-content.active {
+max-height: 500px;
+}
+.accordion-icon {
+transition: transform 0.3s ease;
+}
+.accordion-button.active .accordion-icon {
+transform: rotate(180deg);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.custom-range::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #FF6B35;
+cursor: pointer;
+border: 2px solid white;
+box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.lightbox {
+display: none;
+position: fixed;
+z-index: 999;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.9);
+justify-content: center;
+align-items: center;
+}
+.lightbox.active {
+display: flex;
+}
+.lightbox-content {
+max-width: 90%;
+max-height: 80%;
+}
+.weather-chart {
+width: 100%;
+height: 300px;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navigation -->
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-md">
+  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+          <a href="All-Travel-Packages.html" class="flex items-center text-gray-800">
+              <i class="ri-arrow-left-line mr-2"></i>
+              <span>Back to Packages</span>
+          </a>
+      </div>
+      <h1 class="text-xl font-semibold text-gray-800">Kashmir: Heaven on Earth</h1>
+      <div class="flex items-center">
+          <button class="w-10 h-10 flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-full">
+          </button>
+      </div>
+  </div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section pt-24 pb-16 md:pt-32 md:pb-24">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl text-white">
+<h1 class="text-5xl md:text-6xl font-bold mb-4">Kashmir</h1>
+<p class="text-xl mb-6">Paradise of Snow, Lakes, and Beauty.</p>
+<div class="flex items-center mb-8">
+<div class="flex items-center mr-6">
+<i class="ri-map-pin-line mr-2"></i>
+<span>Northwestern India</span>
+</div>
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-1">4.5 (1,842 reviews)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Info Bar -->
+<section id="quickInfoBar" class="bg-white/70 backdrop-blur-md py-7 border-b border-gray-200 sticky top-16 z-40 transition-all duration-300 translate-y-0">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-center pb-2 gap-8 flex-wrap">
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-calendar-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Best Time</p>
+        <p class="text-xs text-gray-600">March to October</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-sun-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Weather</p>
+        <p class="text-xs text-gray-600">Cool & Pleasant</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-time-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Duration</p>
+        <p class="text-xs text-gray-600">5-7 Days</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-wallet-3-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Starting Price</p>
+        <p class="text-xs text-gray-600">$499 per person</p>
+      </div>
+      <div class="flex flex-col items-center min-w-max">
+        <div class="w-10 h-10 flex items-center justify-center bg-primary rounded-full mb-2">
+          <i class="ri-translate-2-line text-white"></i>
+        </div>
+        <p class="text-sm font-medium">Languages</p>
+        <p class="text-xs text-gray-600">Hindi, English, Kashmiri</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script -->
+<script>
+  const quickInfoBar = document.getElementById('quickInfoBar');
+  let lastScrollTop = 0;
+  let scrollTimeout;
+  let isHidden = false;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const diff = scrollTop - lastScrollTop;
+
+    clearTimeout(scrollTimeout);
+
+    // When scrolling down
+    if (diff > 10 && !isHidden) {
+      quickInfoBar.classList.add('translate-y-[-100%]');
+      isHidden = true;
+    }
+
+    // When scrolling up
+    if (diff < -10 && isHidden && scrollTop > 50) {
+      scrollTimeout = setTimeout(() => {
+        quickInfoBar.classList.remove('translate-y-[-100%]');
+        isHidden = false;
+      }, 200);
+    }
+
+    // If we're at the top, keep it visible (reset any glitch)
+    if (scrollTop < 10) {
+      quickInfoBar.classList.remove('translate-y-[-100%]');
+      isHidden = false;
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+<!-- Scroll Script -->
+<script>
+  const quickInfoBar = document.getElementById('quickInfoBar');
+  let lastScrollTop = 0;
+  let isHidden = false;
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const diff = scrollTop - lastScrollTop;
+
+    clearTimeout(scrollTimeout);
+
+    if (diff > 10 && !isHidden) {
+      // Scroll down → hide bar
+      quickInfoBar.style.transform = 'translateY(-100%)';
+      isHidden = true;
+    }
+
+    if (diff < -10 && isHidden) {
+      // Wait 200ms after scroll up stops to show the bar
+      scrollTimeout = setTimeout(() => {
+        quickInfoBar.style.transform = 'translateY(0)';
+        isHidden = false;
+      }, 200);
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
+<!-- Main Content Section -->
+<section class="py-12">
+<div class="container mx-auto px-4 flex justify-center">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl w-full">
+<!-- Left Content -->
+<div class="lg:col-span-2">
+<!-- Overview Section -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Overview</h2>
+<div class="prose max-w-none">
+<p class="mb-4">Kashmir, often referred to as "Heaven on Earth," is a stunning paradise in northern India, nestled between the majestic Himalayas. Known for its snow-capped peaks, lush valleys, and pristine lakes like Dal Lake, it offers a mesmerizing escape into nature.</p>
+<p class="mb-4">The region is rich in history and culture, with its Mughal gardens, houseboats, and traditional Kashmiri crafts. Visitors can indulge in the exquisite local cuisine, explore the scenic meadows of Gulmarg and Pahalgam, and experience the warmth of Kashmiri hospitality.</p>
+<p>Whether you're seeking tranquility, adventure, or cultural immersion, Kashmir promises a unique and unforgettable journey.</p>
+</div>
+</div>
+<!-- Key Attractions Section -->
+<div class="mb-12">
+  <h2 class="text-2xl font-bold mb-6">Key Attractions</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Attraction 1 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="dal lake final.png" alt="Dal Lake">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Dal Lake, Kashmir</h3>
+        <p class="text-gray-600 text-sm mb-3">A serene high-altitude lake with charming houseboats, colorful shikaras, and snow-capped mountains mirrored in its still waters.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 2-3 hours</span>
+        </div>
+      </div>
+    </div>
+    <!-- Attraction 2 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="gulmarg.png" alt="Gulmarg">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Gulmarg</h3>
+        <p class="text-gray-600 text-sm mb-3">A pristine hill station nestled in the Himalayas, Gulmarg offers breathtaking snow-covered landscapes, thrilling winter sports, and the world’s second-highest cable car ride.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 4-6 hours</span>
+        </div>
+      </div>
+    </div>
+    <!-- Attraction 3 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="tulip garden.png" alt="Tulip Garden">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Tulip Garden</h3>
+        <p class="text-gray-600 text-sm mb-3">Asia’s largest tulip garden, bursting with color each spring, set against the scenic Zabarwan hills.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 1-2 hours</span>
+        </div>
+      </div>
+    </div>
+    <!-- Attraction 4 -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <img src="mughal garden.png" alt="Mughal Garden">
+      <div class="p-4">
+        <h3 class="font-bold text-lg mb-2">Mughal Garden</h3>
+        <p class="text-gray-600 text-sm mb-3">A serene blend of terraced lawns, flowing fountains, and vibrant blooms with views of Dal Lake.</p>
+        <div class="flex items-center text-sm text-gray-500 mt-auto">
+          <i class="ri-time-line mr-1"></i>
+          <span>Recommended time: 1-2 hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6">
+    <button class="flex items-center text-primary font-small">
+      <span>And Many More Amazing Destinations</span>
+    </button>
+  </div>
+  </div>
+<!-- Recommended Activities -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Recommended Activities</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Activity 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="shiraka.png">
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1">Shikara Ride</h3>
+<p class="text-gray-600 text-sm">Float through calm waters on a traditional shikara, surrounded by lotus gardens and mountain views.</p>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="sufi music.png">
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1">Sufiana Music</h3>
+<p class="text-gray-600 text-sm">Immerse yourself in the soulful rhythms of Kashmir’s classical music, echoing centuries of tradition</p>
+</div>
+</div>
+<!-- Activity 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<img src="hotbaloon.png">
+<div class="p-4">
+<h3 class="font-bold text-lg mb-1">Balloon Ride</h3>
+<p class="text-gray-600 text-sm">Shop for saffron, spices, and crafts while gliding through Srinagar’s famous lake market.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Best Time to Visit -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Best Time to Visit</h2>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<p class="text-gray-700 mb-6">Rajasthan experiences extreme temperatures, with very hot summers and cool winters. The best time to visit is from October to March when the weather is pleasant for sightseeing and outdoor activities.</p>
+<div class="weather-chart" id="weatherChart"></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="bg-green-50 rounded-lg p-4">
+<h3 class="font-bold text-lg mb-2 text-green-700">Peak Season (Oct-Feb)</h3>
+<p class="text-sm text-gray-700">Perfect weather with cool temperatures. Ideal for sightseeing but expect larger crowds and higher prices.</p>
+</div>
+<div class="bg-yellow-50 rounded-lg p-4">
+<h3 class="font-bold text-lg mb-2 text-yellow-700">Shoulder Season (Mar & Sep)</h3>
+<p class="text-sm text-gray-700">Moderate temperatures with fewer tourists. Good balance of comfortable weather and better deals.</p>
+</div>
+<div class="bg-red-50 rounded-lg p-4">
+<h3 class="font-bold text-lg mb-2 text-red-700">Off Season (Apr-Aug)</h3>
+<p class="text-sm text-gray-700">Very hot with temperatures often exceeding 40°C (104°F). Best avoided unless you're seeking significant discounts.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Travel Tips -->
+<div class="mb-12">
+  <h2 class="text-2xl font-bold mb-6">Travel Tips</h2>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden">
+    <div class="divide-y divide-gray-200">
+      <!-- Tip 1 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-flight-takeoff-line text-white"></i>
+            </div>
+            <span class="font-medium">Getting There</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Jaipur International Airport is the main gateway to Rajasthan, with direct flights from major Indian cities and some international destinations. Alternatively, Delhi is well-connected internationally and just 4-5 hours from Jaipur by road.</p>
+          <p class="text-gray-600">Rajasthan is also well-connected by train, with major cities like Jaipur, Jodhpur, and Udaipur having railway stations with connections to Delhi, Mumbai, and other major Indian cities.</p>
+        </div>
+      </div>
+
+      <!-- Tip 2 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-car-line text-white"></i>
+            </div>
+            <span class="font-medium">Local Transportation</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Within cities, auto-rickshaws and taxis are readily available. For a more comfortable experience, consider using ride-hailing apps like Uber or Ola in major cities.</p>
+          <p class="text-gray-600">For traveling between cities, hiring a private car with a driver is the most convenient option. State-run buses are economical but can be crowded and less comfortable for long journeys.</p>
+        </div>
+      </div>
+
+      <!-- Tip 3 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-suitcase-line text-white"></i>
+            </div>
+            <span class="font-medium">What to Pack</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Light, breathable clothing is essential, but bring a light jacket or shawl for evenings, especially in winter months. Modest clothing is recommended when visiting religious sites.</p>
+          <p class="text-gray-600">Don't forget sunscreen, sunglasses, and a hat for protection from the strong desert sun. Comfortable walking shoes are a must for exploring forts and palaces.</p>
+        </div>
+      </div>
+
+      <!-- Tip 4 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-user-settings-line text-white"></i>
+            </div>
+            <span class="font-medium">Local Customs</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Rajasthan is a conservative state. Dress modestly, especially in rural areas. Remove shoes before entering temples and homes. Ask permission before photographing locals.</p>
+          <p class="text-gray-600">Bargaining is expected in markets, but maintain a friendly attitude. Start at about 50-60% of the quoted price and work your way up to a mutually agreeable amount.</p>
+        </div>
+      </div>
+
+      <!-- Tip 5 -->
+      <div class="accordion-item">
+        <button class="accordion-button w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+          <div class="flex items-center">
+            <div class="w-8 h-8 flex items-center justify-center bg-primary/10 rounded-full mr-3">
+              <i class="ri-shield-check-line text-white"></i>
+            </div>
+            <span class="font-medium">Safety Tips</span>
+          </div>
+          <i class="ri-arrow-down-s-line accordion-icon"></i>
+        </button>
+        <div class="accordion-content px-6 pb-2" style="display: none;">
+          <p class="text-gray-600 mb-2">Rajasthan is generally safe for tourists, but take standard precautions with your belongings in crowded areas. Women travelers should avoid isolated areas after dark.</p>
+          <p class="text-gray-600">Stay hydrated, especially in summer months. Use bottled water for drinking and avoid ice in smaller establishments. Carry basic medications for stomach issues, as well as any personal prescriptions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript to handle the accordion toggle -->
+<script>
+  // Get all accordion buttons
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Get the associated content of the clicked accordion button
+      const content = button.nextElementSibling;
+
+      // Toggle the content visibility
+      if (content.style.display === 'none' || content.style.display === '') {
+        content.style.display = 'block';  // Show content
+        button.querySelector('.accordion-icon').classList.remove('ri-arrow-down-s-line');
+        button.querySelector('.accordion-icon').classList.add('ri-arrow-up-s-line');
+      } else {
+        content.style.display = 'none';  // Hide content
+        button.querySelector('.accordion-icon').classList.remove('ri-arrow-up-s-line');
+        button.querySelector('.accordion-icon').classList.add('ri-arrow-down-s-line');
+      }
+    });
+  });
+</script>
+
+<!-- Photo Gallery -->
+<div class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Photo Gallery</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="gallery-item cursor-pointer" data-img="https://readdy.ai/api/search-image?query=A%2520stunning%2520view%2520of%2520Hawa%2520Mahal%2520%2528Palace%2520of%2520Winds%2529%2520in%2520Jaipur%252C%2520Rajasthan%252C%2520showing%2520its%2520intricate%2520honeycomb%2520facade%2520with%2520hundreds%2520of%2520small%2520windows%2520and%2520detailed%2520pink%2520sandstone%2520architecture.%2520The%2520image%2520captures%2520the%2520palace%2527s%2520unique%2520five-story%2520exterior%2520designed%2520to%2520allow%2520royal%2520ladies%2520to%2520observe%2520street%2520life%2520without%2520being%2520seen.%2520The%2520warm%2520morning%2520light%2520highlights%2520the%2520pink%2520hue%2520of%2520the%2520building%2520against%2520a%2520clear%2520blue%2520sky%252C%2520showcasing%2520why%2520Jaipur%2520is%2520known%2520as%2520the%2520Pink%2520City.&width=800&height=600&seq=9&orientation=landscape">
+<img src="https://readdy.ai/api/search-image?query=A%2520stunning%2520view%2520of%2520Hawa%2520Mahal%2520%2528Palace%2520of%2520Winds%2529%2520in%2520Jaipur%252C%2520Rajasthan%252C%2520showing%2520its%2520intricate%2520honeycomb%2520facade%2520with%2520hundreds%2520of%2520small%2520windows%2520and%2520detailed%2520pink%2520sandstone%2520architecture.%2520The%2520image%2520captures%2520the%2520palace%2527s%2520unique%2520five-story%2520exterior%2520designed%2520to%2520allow%2520royal%2520ladies%2520to%2520observe%2520street%2520life%2520without%2520being%2520seen.%2520The%2520warm%2520morning%2520light%2520highlights%2520the%2520pink%2520hue%2520of%2520the%2520building%2520against%2520a%2520clear%2520blue%2520sky%252C%2520showcasing%2520why%2520Jaipur%2520is%2520known%2520as%2520the%2520Pink%2520City.&width=400&height=300&seq=9&orientation=landscape" alt="Hawa Mahal" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Hawa Mahal, Jaipur</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="https://readdy.ai/api/search-image?query=A%2520beautiful%2520scene%2520of%2520Lake%2520Pichola%2520in%2520Udaipur%252C%2520Rajasthan%252C%2520with%2520the%2520famous%2520Lake%2520Palace%2520%2528Jag%2520Niwas%2529%2520appearing%2520to%2520float%2520on%2520the%2520water.%2520The%2520white%2520marble%2520palace%2520stands%2520out%2520against%2520the%2520blue%2520water%252C%2520with%2520the%2520Aravalli%2520Hills%2520in%2520the%2520background.%2520The%2520image%2520captures%2520the%2520romantic%2520atmosphere%2520of%2520Udaipur%2520at%2520sunset%252C%2520with%2520golden%2520light%2520reflecting%2520on%2520the%2520lake%2520surface%2520and%2520illuminating%2520the%2520palace%2527s%2520elegant%2520architecture%2520with%2520its%2520domes%252C%2520arches%252C%2520and%2520courtyards.&width=800&height=600&seq=10&orientation=landscape">
+<img src="https://readdy.ai/api/search-image?query=A%2520beautiful%2520scene%2520of%2520Lake%2520Pichola%2520in%2520Udaipur%252C%2520Rajasthan%252C%2520with%2520the%2520famous%2520Lake%2520Palace%2520%2528Jag%2520Niwas%2529%2520appearing%2520to%2520float%2520on%2520the%2520water.%2520The%2520white%2520marble%2520palace%2520stands%2520out%2520against%2520the%2520blue%2520water%252C%2520with%2520the%2520Aravalli%2520Hills%2520in%2520the%2520background.%2520The%2520image%2520captures%2520the%2520romantic%2520atmosphere%2520of%2520Udaipur%2520at%2520sunset%252C%2520with%2520golden%2520light%2520reflecting%2520on%2520the%2520lake%2520surface%2520and%2520illuminating%2520the%2520palace%2527s%2520elegant%2520architecture%2520with%2520its%2520domes%252C%2520arches%252C%2520and%2520courtyards.&width=400&height=300&seq=10&orientation=landscape" alt="Lake Palace" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Lake Palace, Udaipur</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="https://readdy.ai/api/search-image?query=A%2520vibrant%2520street%2520scene%2520in%2520Jodhpur%252C%2520Rajasthan%252C%2520known%2520as%2520the%2520Blue%2520City%252C%2520showing%2520traditional%2520houses%2520painted%2520in%2520various%2520shades%2520of%2520blue.%2520The%2520narrow%2520winding%2520street%2520is%2520lined%2520with%2520blue-washed%2520buildings%2520creating%2520a%2520striking%2520visual%2520effect.%2520The%2520image%2520captures%2520daily%2520life%2520with%2520some%2520locals%2520in%2520traditional%2520attire%2520going%2520about%2520their%2520business%252C%2520small%2520shops%2520with%2520colorful%2520merchandise%252C%2520and%2520perhaps%2520a%2520glimpse%2520of%2520Mehrangarh%2520Fort%2520visible%2520in%2520the%2520background%2520towering%2520over%2520the%2520blue%2520cityscape.&width=800&height=600&seq=11&orientation=landscape">
+<img src="https://readdy.ai/api/search-image?query=A%2520vibrant%2520street%2520scene%2520in%2520Jodhpur%252C%2520Rajasthan%252C%2520known%2520as%2520the%2520Blue%2520City%252C%2520showing%2520traditional%2520houses%2520painted%2520in%2520various%2520shades%2520of%2520blue.%2520The%2520narrow%2520winding%2520street%2520is%2520lined%2520with%2520blue-washed%2520buildings%2520creating%2520a%2520striking%2520visual%2520effect.%2520The%2520image%2520captures%2520daily%2520life%2520with%2520some%2520locals%2520in%2520traditional%2520attire%2520going%2520about%2520their%2520business%252C%2520small%2520shops%2520with%2520colorful%2520merchandise%252C%2520and%2520perhaps%2520a%2520glimpse%2520of%2520Mehrangarh%2520Fort%2520visible%2520in%2520the%2520background%2520towering%2520over%2520the%2520blue%2520cityscape.&width=400&height=300&seq=11&orientation=landscape" alt="Blue City" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Blue City, Jodhpur</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="https://readdy.ai/api/search-image?query=A%2520breathtaking%2520sunset%2520scene%2520in%2520the%2520Thar%2520Desert%2520near%2520Jaisalmer%252C%2520Rajasthan%252C%2520featuring%2520golden%2520sand%2520dunes%2520with%2520dramatic%2520ripple%2520patterns.%2520The%2520low%2520sun%2520casts%2520long%2520shadows%2520and%2520bathes%2520the%2520landscape%2520in%2520warm%2520orange%2520and%2520red%2520hues.%2520A%2520silhouette%2520of%2520a%2520camel%2520caravan%2520with%2520a%2520guide%2520in%2520traditional%2520Rajasthani%2520turban%2520can%2520be%2520seen%2520traversing%2520the%2520dunes%2520against%2520the%2520colorful%2520sky.%2520The%2520image%2520captures%2520the%2520vast%252C%2520peaceful%2520expanse%2520of%2520the%2520desert%2520and%2520the%2520magical%2520quality%2520of%2520desert%2520sunsets.&width=800&height=600&seq=12&orientation=landscape">
+<img src="https://readdy.ai/api/search-image?query=A%2520breathtaking%2520sunset%2520scene%2520in%2520the%2520Thar%2520Desert%2520near%2520Jaisalmer%252C%2520Rajasthan%252C%2520featuring%2520golden%2520sand%2520dunes%2520with%2520dramatic%2520ripple%2520patterns.%2520The%2520low%2520sun%2520casts%2520long%2520shadows%2520and%2520bathes%2520the%2520landscape%2520in%2520warm%2520orange%2520and%2520red%2520hues.%2520A%2520silhouette%2520of%2520a%2520camel%2520caravan%2520with%2520a%2520guide%2520in%2520traditional%2520Rajasthani%2520turban%2520can%2520be%2520seen%2520traversing%2520the%2520dunes%2520against%2520the%2520colorful%2520sky.%2520The%2520image%2520captures%2520the%2520vast%252C%2520peaceful%2520expanse%2520of%2520the%2520desert%2520and%2520the%2520magical%2520quality%2520of%2520desert%2520sunsets.&width=400&height=300&seq=12&orientation=landscape" alt="Thar Desert" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Thar Desert, Jaisalmer</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="https://readdy.ai/api/search-image?query=A%2520colorful%2520scene%2520from%2520Pushkar%2520Camel%2520Fair%2520in%2520Rajasthan%252C%2520showing%2520a%2520vast%2520gathering%2520of%2520camels%2520and%2520people%2520in%2520the%2520desert.%2520Decorated%2520camels%2520with%2520ornate%2520saddles%2520and%2520colorful%2520accessories%2520stand%2520in%2520groups%252C%2520while%2520camel%2520traders%2520in%2520traditional%2520Rajasthani%2520attire%2520with%2520bright%2520turbans%2520negotiate%2520deals.%2520The%2520image%2520captures%2520the%2520festive%2520atmosphere%2520with%2520temporary%2520tents%252C%2520food%2520stalls%252C%2520and%2520perhaps%2520some%2520cultural%2520performances%2520in%2520the%2520background.%2520The%2520desert%2520landscape%2520and%2520warm%2520lighting%2520highlight%2520the%2520unique%2520cultural%2520spectacle%2520of%2520this%2520famous%2520annual%2520fair.&width=800&height=600&seq=13&orientation=landscape">
+<img src="https://readdy.ai/api/search-image?query=A%2520colorful%2520scene%2520from%2520Pushkar%2520Camel%2520Fair%2520in%2520Rajasthan%252C%2520showing%2520a%2520vast%2520gathering%2520of%2520camels%2520and%2520people%2520in%2520the%2520desert.%2520Decorated%2520camels%2520with%2520ornate%2520saddles%2520and%2520colorful%2520accessories%2520stand%2520in%2520groups%252C%2520while%2520camel%2520traders%2520in%2520traditional%2520Rajasthani%2520attire%2520with%2520bright%2520turbans%2520negotiate%2520deals.%2520The%2520image%2520captures%2520the%2520festive%2520atmosphere%2520with%2520temporary%2520tents%252C%2520food%2520stalls%252C%2520and%2520perhaps%2520some%2520cultural%2520performances%2520in%2520the%2520background.%2520The%2520desert%2520landscape%2520and%2520warm%2520lighting%2520highlight%2520the%2520unique%2520cultural%2520spectacle%2520of%2520this%2520famous%2520annual%2520fair.&width=400&height=300&seq=13&orientation=landscape" alt="Pushkar Camel Fair" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Pushkar Camel Fair</p>
+</div>
+<div class="gallery-item cursor-pointer" data-img="https://readdy.ai/api/search-image?query=A%2520detailed%2520close-up%2520of%2520traditional%2520Rajasthani%2520cuisine%2520served%2520in%2520a%2520thali%2520%2528metal%2520plate%2529.%2520The%2520thali%2520contains%2520various%2520dishes%2520including%2520dal%2520baati%2520churma%2520%2528lentils%2520with%2520baked%2520wheat%2520balls%2520and%2520sweet%2520crumbled%2520mixture%2529%252C%2520gatte%2520ki%2520sabzi%2520%2528gram%2520flour%2520dumplings%2520in%2520curry%2529%252C%2520ker%2520sangri%2520%2528desert%2520beans%2520and%2520berries%2529%252C%2520and%2520bajre%2520ki%2520roti%2520%2528millet%2520flatbread%2529.%2520The%2520food%2520is%2520garnished%2520with%2520fresh%2520coriander%2520and%2520accompanied%2520by%2520small%2520bowls%2520of%2520yogurt%2520raita%252C%2520chutneys%252C%2520and%2520perhaps%2520a%2520sweet%2520dish%2520like%2520ghevar.%2520The%2520presentation%2520is%2520authentic%2520with%2520traditional%2520serving%2520vessels.&width=800&height=600&seq=14&orientation=landscape">
+<img src="https://readdy.ai/api/search-image?query=A%2520detailed%2520close-up%2520of%2520traditional%2520Rajasthani%2520cuisine%2520served%2520in%2520a%2520thali%2520%2528metal%2520plate%2529.%2520The%2520thali%2520contains%2520various%2520dishes%2520including%2520dal%2520baati%2520churma%2520%2528lentils%2520with%2520baked%2520wheat%2520balls%2520and%2520sweet%2520crumbled%2520mixture%2529%252C%2520gatte%2520ki%2520sabzi%2520%2528gram%2520flour%2520dumplings%2520in%2520curry%2529%252C%2520ker%2520sangri%2520%2528desert%2520beans%2520and%2520berries%2529%252C%2520and%2520bajre%2520ki%2520roti%2520%2528millet%2520flatbread%2529.%2520The%2520food%2520is%2520garnished%2520with%2520fresh%2520coriander%2520and%2520accompanied%2520by%2520small%2520bowls%2520of%2520yogurt%2520raita%252C%2520chutneys%252C%2520and%2520perhaps%2520a%2520sweet%2520dish%2520like%2520ghevar.%2520The%2520presentation%2520is%2520authentic%2520with%2520traditional%2520serving%2520vessels.&width=400&height=300&seq=14&orientation=landscape" alt="Rajasthani Cuisine" class="w-full h-40 object-cover object-top rounded">
+<p class="text-sm mt-1 text-gray-600">Rajasthani Cuisine</p>
+</div>
+</div>
+<div class="mt-4 text-center">
+<button class="text-white font-medium">View All Photos</button>
+</div>
+</div>
+</div>
+<!-- Right Sidebar -->
+<div class="lg:col-span-1">
+<!-- Tour Packages -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+<div class="p-6 bg-primary border-b border-gray-200">
+<h3 class="text-white font-bold">Tour Packages</h3>
+</div>
+<div class="divide-y divide-gray-200">
+<!-- Package 1 -->
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Royal Rajasthan Explorer</h4>
+<div class="flex items-center mb-2 text-sm text-gray-600">
+<i class="ri-time-line mr-1"></i>
+<span>7 Days / 6 Nights</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Experience the best of Rajasthan with visits to Jaipur, Jodhpur, and Udaipur. Includes luxury accommodations, guided tours, and cultural experiences.</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="text-sm text-gray-600 ml-1">(124 reviews)</span>
+</div>
+<div class="text-white font-bold">$1,299</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+<!-- Package 2 -->
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Desert & Heritage Tour</h4>
+<div class="flex items-center mb-2 text-sm text-gray-600">
+<i class="ri-time-line mr-1"></i>
+<span>5 Days / 4 Nights</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Explore the golden city of Jaisalmer and the Thar Desert. Includes camel safari, desert camping, and visits to historical monuments.</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="text-sm text-gray-600 ml-1">(87 reviews)</span>
+</div>
+<div class="text-white font-bold">$899</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+<!-- Package 3 -->
+<div class="p-6">
+<h4 class="font-bold text-lg mb-2">Luxury Palace Experience</h4>
+<div class="flex items-center mb-2 text-sm text-gray-600">
+<i class="ri-time-line mr-1"></i>
+<span>10 Days / 9 Nights</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Live like royalty in heritage hotels and palaces. Comprehensive tour of Rajasthan with exclusive cultural experiences and gourmet dining.</p>
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="text-sm text-gray-600 ml-1">(56 reviews)</span>
+</div>
+<div class="text-white font-bold">$2,499</div>
+</div>
+<button class="w-full bg-primary text-white py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Book Now</button>
+</div>
+</div>
+<div class="p-4 text-center">
+<button class="text-white font-medium">View All Packages</button>
+</div>
+</div>
+<!-- Accommodation Options -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+<div class="p-6 bg-primary border-b border-gray-200">
+<h3 class="text-white font-bold">Accommodation Options</h3>
+</div>
+<div class="p-6">
+<!-- Luxury -->
+<div class="mb-6">
+<h4 class="font-bold text-lg mb-2">Luxury Heritage Hotels</h4>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-gray-600">$250+ per night</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Experience royal living in converted palaces and havelis with world-class amenities and authentic decor.</p>
+<div class="flex gap-1 mb-2">
+<img src="https://readdy.ai/api/search-image?query=A%2520luxurious%2520heritage%2520hotel%2520in%2520Rajasthan%252C%2520showing%2520a%2520converted%2520palace%2520with%2520ornate%2520architecture%252C%2520intricate%2520stone%2520carvings%252C%2520and%2520elegant%2520archways.%2520The%2520image%2520captures%2520a%2520beautifully%2520decorated%2520courtyard%2520with%2520traditional%2520Rajasthani%2520elements%2520like%2520carved%2520pillars%2520and%2520jharokhas%2520%2528balconies%2529.%2520The%2520hotel%2520features%2520manicured%2520gardens%252C%2520a%2520swimming%2520pool%252C%2520and%2520perhaps%2520a%2520glimpse%2520of%2520luxurious%2520guest%2520rooms%2520with%2520period%2520furniture%2520and%2520royal%2520decor.%2520The%2520image%2520should%2520convey%2520the%2520opulent%252C%2520authentic%2520experience%2520of%2520staying%2520in%2520a%2520former%2520royal%2520residence.&width=120&height=80&seq=15&orientation=landscape" alt="Heritage Hotel" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=An%2520elegant%2520interior%2520of%2520a%2520luxury%2520heritage%2520hotel%2520room%2520in%2520Rajasthan%252C%2520featuring%2520a%2520spacious%2520suite%2520with%2520ornate%2520traditional%2520decor.%2520The%2520room%2520has%2520a%2520four-poster%2520bed%2520with%2520silk%2520drapes%252C%2520antique%2520furniture%252C%2520intricate%2520hand-painted%2520walls%2520or%2520frescoes%252C%2520and%2520marble%2520flooring.%2520Large%2520windows%2520with%2520jharokha-style%2520%2528ornate%2520overhanging%2520balcony%2529%2520elements%2520offer%2520views%2520of%2520palace%2520grounds%2520or%2520city%2520vistas.%2520The%2520decor%2520blends%2520royal%2520Rajasthani%2520aesthetics%2520with%2520modern%2520luxury%2520amenities%252C%2520featuring%2520rich%2520textiles%2520in%2520jewel%2520tones%2520and%2520traditional%2520artwork.&width=120&height=80&seq=16&orientation=landscape" alt="Heritage Hotel Room" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520luxurious%2520dining%2520area%2520in%2520a%2520heritage%2520hotel%2520in%2520Rajasthan%252C%2520featuring%2520an%2520opulent%2520restaurant%2520or%2520banquet%2520hall%2520with%2520traditional%2520royal%2520decor.%2520The%2520space%2520has%2520ornate%2520columns%252C%2520intricate%2520ceiling%2520work%252C%2520crystal%2520chandeliers%252C%2520and%2520elegant%2520table%2520settings%2520with%2520fine%2520china%2520and%2520silverware.%2520The%2520ambiance%2520captures%2520the%2520regal%2520dining%2520experience%2520with%2520perhaps%2520some%2520traditionally%2520dressed%2520staff%2520or%2520musicians%2520performing%2520in%2520the%2520background.%2520The%2520image%2520conveys%2520the%2520luxurious%2520dining%2520experience%2520offered%2520in%2520high-end%2520heritage%2520properties%2520that%2520were%2520once%2520royal%2520palaces.&width=120&height=80&seq=17&orientation=landscape" alt="Heritage Hotel Dining" class="w-20 h-14 object-cover object-top rounded">
+</div>
+<div class="text-sm text-gray-600">
+<span class="font-medium">Popular options:</span> Taj Lake Palace (Udaipur), Umaid Bhawan Palace (Jodhpur), Rambagh Palace (Jaipur)
+</div>
+</div>
+<!-- Mid-range -->
+<div class="mb-6">
+<h4 class="font-bold text-lg mb-2">Boutique Hotels</h4>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="ml-2 text-gray-600">$100-250 per night</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Charming hotels with character, offering comfortable accommodations with local design elements.</p>
+<div class="flex gap-1 mb-2">
+<img src="https://readdy.ai/api/search-image?query=A%2520charming%2520boutique%2520hotel%2520in%2520Rajasthan%2520with%2520a%2520blend%2520of%2520traditional%2520and%2520contemporary%2520design.%2520The%2520image%2520shows%2520a%2520tastefully%2520renovated%2520haveli%2520%2528traditional%2520mansion%2529%2520with%2520a%2520welcoming%2520entrance%2520featuring%2520colorful%2520Rajasthani%2520elements%2520like%2520jharokhas%2520%2528ornate%2520windows%2529%2520and%2520perhaps%2520some%2520contemporary%2520touches.%2520The%2520property%2520has%2520a%2520cozy%2520courtyard%2520with%2520comfortable%2520seating%2520areas%252C%2520potted%2520plants%252C%2520and%2520traditional%2520decor%2520elements.%2520The%2520atmosphere%2520conveys%2520a%2520mid-range%2520accommodation%2520option%2520that%2520offers%2520authentic%2520character%2520without%2520the%2520ultra-luxury%2520price%2520tag.&width=120&height=80&seq=18&orientation=landscape" alt="Boutique Hotel" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520comfortable%2520room%2520in%2520a%2520boutique%2520hotel%2520in%2520Rajasthan%252C%2520featuring%2520a%2520well-appointed%2520space%2520with%2520a%2520blend%2520of%2520traditional%2520and%2520modern%2520elements.%2520The%2520room%2520has%2520a%2520comfortable%2520bed%2520with%2520quality%2520linens%252C%2520tasteful%2520decor%2520with%2520local%2520Rajasthani%2520touches%2520like%2520colorful%2520textiles%2520or%2520artwork%252C%2520and%2520modern%2520amenities.%2520The%2520space%2520is%2520clean%2520and%2520inviting%2520with%2520perhaps%2520a%2520small%2520seating%2520area%2520or%2520work%2520desk%252C%2520and%2520windows%2520that%2520offer%2520views%2520of%2520the%2520surroundings.%2520The%2520image%2520conveys%2520a%2520mid-range%2520accommodation%2520that%2520offers%2520comfort%2520and%2520character%2520without%2520extreme%2520luxury.&width=120&height=80&seq=19&orientation=landscape" alt="Boutique Hotel Room" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520pleasant%2520dining%2520area%2520in%2520a%2520boutique%2520hotel%2520in%2520Rajasthan%252C%2520featuring%2520a%2520charming%2520restaurant%2520or%2520cafe%2520space%2520with%2520a%2520mix%2520of%2520traditional%2520and%2520contemporary%2520design.%2520The%2520space%2520has%2520comfortable%2520seating%252C%2520tasteful%2520decor%2520with%2520Rajasthani%2520elements%2520like%2520colorful%2520textiles%2520or%2520artwork%252C%2520and%2520a%2520warm%2520ambiance.%2520Tables%2520are%2520nicely%2520set%2520with%2520quality%2520tableware%252C%2520and%2520perhaps%2520some%2520local%2520design%2520touches%2520like%2520traditional%2520lamps%2520or%2520artifacts.%2520The%2520image%2520conveys%2520a%2520pleasant%2520dining%2520experience%2520in%2520a%2520mid-range%2520property%2520that%2520offers%2520character%2520and%2520quality%2520without%2520extreme%2520luxury.&width=120&height=80&seq=20&orientation=landscape" alt="Boutique Hotel Dining" class="w-20 h-14 object-cover object-top rounded">
+</div>
+<div class="text-sm text-gray-600">
+<span class="font-medium">Popular options:</span> Samode Haveli (Jaipur), Rawla Narlai (Pali), Haveli Dharampura (Jaipur)
+</div>
+</div>
+<!-- Budget -->
+<div>
+<h4 class="font-bold text-lg mb-2">Guesthouses & Homestays</h4>
+<div class="flex items-center mb-2">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-line"></i>
+<i class="ri-star-line"></i>
+</div>
+<span class="ml-2 text-gray-600">$30-100 per night</span>
+</div>
+<p class="text-gray-600 text-sm mb-3">Authentic stays with local families or in small guesthouses, offering cultural immersion and value.</p>
+<div class="flex gap-1 mb-2">
+<img src="https://readdy.ai/api/search-image?query=A%2520welcoming%2520guesthouse%2520or%2520homestay%2520in%2520Rajasthan%252C%2520showing%2520a%2520modest%2520but%2520charming%2520traditional%2520building%2520with%2520local%2520architectural%2520elements.%2520The%2520property%2520has%2520a%2520simple%2520but%2520inviting%2520entrance%2520with%2520perhaps%2520some%2520potted%2520plants%2520or%2520traditional%2520decorations.%2520The%2520atmosphere%2520conveys%2520a%2520family-run%2520establishment%2520that%2520offers%2520an%2520authentic%2520local%2520experience%2520at%2520an%2520affordable%2520price.%2520The%2520building%2520might%2520have%2520a%2520small%2520courtyard%2520or%2520terrace%2520where%2520guests%2520can%2520relax%252C%2520with%2520simple%2520but%2520comfortable%2520furnishings.&width=120&height=80&seq=21&orientation=landscape" alt="Guesthouse" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520simple%2520but%2520clean%2520room%2520in%2520a%2520guesthouse%2520or%2520homestay%2520in%2520Rajasthan%252C%2520featuring%2520a%2520modest%2520but%2520comfortable%2520space%2520with%2520basic%2520amenities.%2520The%2520room%2520has%2520a%2520neatly%2520made%2520bed%2520with%2520clean%2520linens%252C%2520simple%2520furniture%2520like%2520a%2520small%2520table%2520or%2520chair%252C%2520and%2520perhaps%2520some%2520local%2520touches%2520in%2520the%2520decor%2520like%2520a%2520small%2520piece%2520of%2520artwork%2520or%2520textile.%2520The%2520space%2520is%2520modest%2520but%2520well-kept%252C%2520with%2520natural%2520light%2520coming%2520through%2520a%2520window.%2520The%2520image%2520conveys%2520a%2520budget-friendly%2520accommodation%2520that%2520offers%2520cleanliness%2520and%2520basic%2520comfort.&width=120&height=80&seq=22&orientation=landscape" alt="Guesthouse Room" class="w-20 h-14 object-cover object-top rounded">
+<img src="https://readdy.ai/api/search-image?query=A%2520simple%2520dining%2520area%2520in%2520a%2520guesthouse%2520or%2520homestay%2520in%2520Rajasthan%252C%2520featuring%2520a%2520modest%2520but%2520clean%2520space%2520where%2520guests%2520can%2520enjoy%2520meals.%2520The%2520area%2520has%2520basic%2520tables%2520and%2520chairs%252C%2520perhaps%2520in%2520a%2520small%2520dining%2520room%2520or%2520courtyard%2520setting.%2520There%2520might%2520be%2520simple%2520decorative%2520elements%2520like%2520local%2520textiles%2520or%2520artwork%2520on%2520the%2520walls.%2520The%2520atmosphere%2520conveys%2520a%2520homey%252C%2520authentic%2520experience%2520where%2520travelers%2520can%2520enjoy%2520home-cooked%2520local%2520meals.%2520The%2520setting%2520is%2520unpretentious%2520but%2520welcoming%252C%2520reflecting%2520the%2520budget-friendly%2520nature%2520of%2520the%2520accommodation.&width=120&height=80&seq=23&orientation=landscape" alt="Guesthouse Dining" class="w-20 h-14 object-cover object-top rounded">
+</div>
+<div class="text-sm text-gray-600">
+<span class="font-medium">Popular options:</span> Zostel (multiple locations), Moustache Hostels, Local homestays in Pushkar and Bundi
+</div>
+</div>
+</div>
+</div>
+<!-- Inquiry Form -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden sticky top-32">
+<div class="p-6 bg-primary/90 border-b border-gray-200">
+<h3 class="text-white font-bold">Plan Your Trip</h3>
+</div>
+<div class="p-6">
+<form>
+<div class="mb-4">
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="mb-4">
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="mb-4">
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="mb-4">
+<label for="dates" class="block text-sm font-medium text-gray-700 mb-1">Travel Dates</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative">
+<input type="date" placeholder="Check-in" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+<div class="relative">
+<input type="date" placeholder="Check-out" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary">
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label for="travelers" class="block text-sm font-medium text-gray-700 mb-1">Number of Travelers</label>
+<div class="relative">
+<select id="travelers" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary appearance-none pr-8">
+<option>Select</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5+</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label for="accommodation" class="block text-sm font-medium text-gray-700 mb-1">Preferred Accommodation</label>
+<div class="relative">
+<select id="accommodation" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary appearance-none pr-8">
+<option>Select</option>
+<option>Luxury Heritage Hotels</option>
+<option>Boutique Hotels</option>
+<option>Guesthouses & Homestays</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</div>
+</div>
+<div class="mb-4">
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Special Requirements</label>
+<textarea id="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-primary focus:border-primary"></textarea>
+</div>
+<div class="mb-6">
+<label class="custom-checkbox flex items-center">
+<input type="checkbox" class="hidden">
+<span class="checkmark"></span>
+<span class="ml-7 text-gray-700 text-sm">I agree to receive travel updates and promotional offers.</span>
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Send Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Destinations -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-2xl font-bold mb-8">Related Destinations</h2>
+<div class="flex overflow-x-auto pb-6 gap-6 snap-x">
+<!-- Destination 1 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+<img src="https://readdy.ai/api/search-image?query=A%2520stunning%2520view%2520of%2520Jaipur%252C%2520Rajasthan%252C%2520known%2520as%2520the%2520Pink%2520City%252C%2520featuring%2520its%2520distinctive%2520pink-hued%2520buildings%2520and%2520architecture.%2520The%2520image%2520captures%2520an%2520elevated%2520view%2520of%2520the%2520city%2520with%2520its%2520organized%2520grid%2520layout%252C%2520showing%2520the%2520uniform%2520pink-terracotta%2520colored%2520buildings%2520with%2520some%2520prominent%2520landmarks%2520visible.%2520The%2520scene%2520includes%2520bustling%2520markets%2520or%2520bazaars%2520with%2520their%2520colorful%2520awnings%252C%2520and%2520perhaps%2520a%2520glimpse%2520of%2520surrounding%2520hills%2520or%2520forts%2520in%2520the%2520distance.%2520The%2520image%2520conveys%2520the%2520unique%2520character%2520and%2520royal%2520heritage%2520of%2520this%2520famous%2520Rajasthani%2520capital.&width=400&height=300&seq=24&orientation=landscape" alt="Jaipur" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Jaipur</h3>
+<p class="text-sm">The Pink City</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">Explore the capital of Rajasthan with its pink-hued buildings, magnificent City Palace, and vibrant bazaars.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.7</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Destination 2 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+<img src="https://readdy.ai/api/search-image?query=A%2520panoramic%2520view%2520of%2520Udaipur%252C%2520Rajasthan%252C%2520known%2520as%2520the%2520City%2520of%2520Lakes%252C%2520featuring%2520its%2520beautiful%2520lakes%2520and%2520palaces.%2520The%2520image%2520captures%2520Lake%2520Pichola%2520with%2520its%2520shimmering%2520blue%2520waters%252C%2520with%2520the%2520white%2520marble%2520Lake%2520Palace%2520appearing%2520to%2520float%2520in%2520the%2520middle.%2520The%2520shoreline%2520shows%2520the%2520impressive%2520City%2520Palace%2520complex%2520with%2520its%2520distinctive%2520architecture%252C%2520and%2520the%2520city%2520spreading%2520around%2520the%2520lake%2520with%2520the%2520Aravalli%2520Hills%2520in%2520the%2520background.%2520The%2520scene%2520conveys%2520the%2520romantic%252C%2520regal%2520atmosphere%2520that%2520makes%2520Udaipur%2520one%2520of%2520Rajasthan%2527s%2520most%2520picturesque%2520cities.&width=400&height=300&seq=25&orientation=landscape" alt="Udaipur" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Udaipur</h3>
+<p class="text-sm">City of Lakes</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">Discover the romantic city with its shimmering lakes, marble palaces, and picturesque surroundings.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Destination 3 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+<img src="https://readdy.ai/api/search-image?query=A%2520striking%2520view%2520of%2520Jodhpur%252C%2520Rajasthan%252C%2520known%2520as%2520the%2520Blue%2520City%252C%2520featuring%2520its%2520distinctive%2520blue-painted%2520houses%2520and%2520buildings.%2520The%2520image%2520captures%2520an%2520elevated%2520view%2520of%2520the%2520city%2520with%2520the%2520imposing%2520Mehrangarh%2520Fort%2520rising%2520dramatically%2520on%2520a%2520rocky%2520hill%2520above%2520the%2520sea%2520of%2520blue%2520buildings.%2520The%2520contrast%2520between%2520the%2520golden-brown%2520fort%2520and%2520the%2520blue%2520cityscape%2520below%2520is%2520striking.%2520The%2520scene%2520shows%2520the%2520densely%2520packed%2520old%2520city%2520with%2520its%2520maze%2520of%2520narrow%2520streets%2520and%2520the%2520distinctive%2520blue%2520wash%2520that%2520gives%2520Jodhpur%2520its%2520famous%2520nickname.&width=400&height=300&seq=26&orientation=landscape" alt="Jodhpur" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Jodhpur</h3>
+<p class="text-sm">The Blue City</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">Visit the second-largest city in Rajasthan with its blue-hued buildings and magnificent Mehrangarh Fort.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Destination 4 -->
+<div class="min-w-[280px] max-w-[280px] bg-white rounded-lg overflow-hidden shadow-md snap-start">
+<div class="relative h-48">
+<img src="https://readdy.ai/api/search-image?query=A%2520captivating%2520view%2520of%2520Jaisalmer%252C%2520Rajasthan%252C%2520known%2520as%2520the%2520Golden%2520City%252C%2520featuring%2520its%2520distinctive%2520yellow%2520sandstone%2520architecture.%2520The%2520image%2520captures%2520the%2520impressive%2520Jaisalmer%2520Fort%2520%2528Sonar%2520Qila%2529%2520rising%2520from%2520the%2520desert%2520landscape%252C%2520with%2520its%2520massive%2520yellow%2520sandstone%2520walls%2520glowing%2520golden%2520in%2520the%2520sunlight.%2520The%2520scene%2520shows%2520the%2520fort%2520and%2520surrounding%2520city%2520with%2520its%2520intricate%2520carved%2520havelis%2520%2528mansions%2529%2520and%2520temples%252C%2520all%2520built%2520from%2520the%2520same%2520golden-yellow%2520stone.%2520The%2520desert%2520setting%2520is%2520visible%2520with%2520perhaps%2520some%2520sand%2520dunes%2520in%2520the%2520distance%252C%2520highlighting%2520Jaisalmer%2527s%2520position%2520as%2520a%2520desert%2520outpost.&width=400&height=300&seq=27&orientation=landscape" alt="Jaisalmer" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 text-white">
+<h3 class="text-xl font-bold mb-1">Jaisalmer</h3>
+<p class="text-sm">The Golden City</p>
+</div>
+</div>
+<div class="p-4">
+<p class="text-gray-600 text-sm mb-4">Experience the desert city with its golden sandstone architecture, ancient fort, and nearby sand dunes.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<i class="ri-star-fill text-yellow-400 mr-1"></i>
+<span class="text-sm text-gray-600">4.8</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lightbox -->
+<div class="lightbox">
+<div class="lightbox-content">
+<img src="" alt="Gallery Image" class="max-w-full max-h-full">
+</div>
+<button class="absolute top-4 right-4 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:bg-black/70">
+<i class="ri-close-line ri-xl"></i>
+</button>
+</div>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-3xl font-['Pacifico'] text-white mb-6 block">logo</a>
+<p class="text-gray-400 mb-6">Discover the magic of India with our expertly curated travel experiences. From majestic mountains to serene beaches, we bring you the best of India.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Popular Destinations</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kashmir</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Goa</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Kerala</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Rajasthan</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Manali</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Ladakh</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/b7a2eafa-93ac-44a4-ba2e-12e6740a844e/49cf23b2-94ab-4529-8800-52b367767c71" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Packages</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Contact Information</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span class="text-gray-400">123 Travel Plaza, MG Road<br>Bangalore, Karnataka 560001<br>India</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span class="text-gray-400">+91 98765 43210</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span class="text-gray-400">info@indiamagictravel.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 India Magic Travel. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<span class="text-gray-400 text-sm">We Accept:</span>
+<div class="flex space-x-2">
+<i class="ri-visa-fill text-gray-400"></i>
+<i class="ri-mastercard-fill text-gray-400"></i>
+<i class="ri-paypal-fill text-gray-400"></i>
+<i class="ri-amazon-pay-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Accordion functionality
+const accordionButtons = document.querySelectorAll('.accordion-button');
+accordionButtons.forEach(button => {
+button.addEventListener('click', function() {
+const content = this.nextElementSibling;
+this.classList.toggle('active');
+if (content.classList.contains('active')) {
+content.classList.remove('active');
+} else {
+content.classList.add('active');
+}
+});
+});
+// Gallery lightbox
+const galleryItems = document.querySelectorAll('.gallery-item');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('button');
+galleryItems.forEach(item => {
+item.addEventListener('click', function() {
+const imgSrc = this.getAttribute('data-img');
+lightboxImg.src = imgSrc;
+lightbox.classList.add('active');
+});
+});
+closeBtn.addEventListener('click', function() {
+lightbox.classList.remove('active');
+});
+lightbox.addEventListener('click', function(e) {
+if (e.target === lightbox) {
+lightbox.classList.remove('active');
+}
+});
+// Weather chart
+const weatherChart = echarts.init(document.getElementById('weatherChart'));
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Temperature (°C)', 'Rainfall (mm)'],
+textStyle: {
+color: '#1f2937'
+}
+},
+xAxis: {
+type: 'category',
+data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: [
+{
+type: 'value',
+name: 'Temperature',
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+formatter: '{value} °C',
+color: '#1f2937'
+}
+},
+{
+type: 'value',
+name: 'Rainfall',
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+formatter: '{value} mm',
+color: '#1f2937'
+}
+}
+],
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+series: [
+{
+name: 'Temperature (°C)',
+type: 'line',
+smooth: true,
+data: [18, 21, 27, 33, 36, 35, 31, 29, 30, 27, 23, 19],
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+}
+},
+{
+name: 'Rainfall (mm)',
+type: 'bar',
+yAxisIndex: 1,
+data: [5, 3, 2, 1, 5, 30, 70, 80, 40, 10, 3, 2],
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)',
+borderRadius: 4
+}
+}
+]
+};
+weatherChart.setOption(option);
+// Handle window resize for chart
+window.addEventListener('resize', function() {
+weatherChart.resize();
+});
+});
+</script>
+</body>
+</html>
